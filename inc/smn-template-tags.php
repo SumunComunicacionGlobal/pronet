@@ -86,16 +86,20 @@ function smn_get_breadcrumb() {
 		yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumb"><div class="breadcrumb-inner">','</div></div>' );
 	}
 
-	return ob_get_clean();
+	$r = ob_get_clean();
+
+	if ( $r ) {
+		return '<div class="breadcrumb-wrapper py-1">' . $r . '</div>';
+	}
 
 }
 
 function smn_breadcrumb() {
 	
 	$r = smn_get_breadcrumb();
-	
+
 	if ( $r ) {
-		echo '<div class="container py-1">';
+		echo '<div class="container">';
 			echo $r;
 		echo '</div>';
 	}

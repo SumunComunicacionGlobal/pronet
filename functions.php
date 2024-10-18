@@ -8,6 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+define( 'COL_CLASSES', 'col-sm-6 col-lg-4 col-xl-3 mb-4' );
+
 // UnderStrap's includes directory.
 $understrap_inc_dir = 'inc';
 

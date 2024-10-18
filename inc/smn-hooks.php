@@ -36,7 +36,7 @@ function smn_wpcf7_form_control_class( $scanned_tag, $replace ) {
 add_action( 'loop_start', 'archive_loop_start', 10 );
 function archive_loop_start( $query ) {
 
-    if ( isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
+    if ( is_woocommerce() || isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
     
     if ( ( isset( $query->query['add_row'] ) && $query->query['add_row'] ) || ( is_archive() || is_home() || is_search() ) ) {
         echo '<div class="row">';
@@ -46,7 +46,7 @@ function archive_loop_start( $query ) {
 add_action( 'loop_end', 'archive_loop_end', 10 );
 function archive_loop_end( $query ) {
 
-    if ( isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
+    if ( is_woocommerce() || isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
 
     if ( ( isset( $query->query['add_row'] ) && $query->query['add_row'] ) || ( is_archive() || is_home() || is_search() ) ) {
         echo '</div>';
@@ -71,8 +71,11 @@ function smn_body_classes( $classes ) {
 
 add_filter( 'post_class', 'bootstrap_post_class', 10, 3 );
 function bootstrap_post_class( $classes, $class, $post_id ) {
+
+    if ( is_woocommerce() ) return $classes;
+
     if ( is_archive() || is_home() || is_search() || in_array( 'hfeed-post', $class ) ) {
-        $classes[] = 'col-sm-6 col-lg-4 mb-5 stretch-linked-block'; 
+        $classes[] = COL_CLASSES . ' stretch-linked-block'; 
     }
 
     return $classes;

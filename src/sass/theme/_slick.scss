@@ -1,4 +1,23 @@
-$slick-font-size: 1.5rem;
+$slick-font-size: 40px;
+
+.slick-prev-custom,
+.slick-next-custom {
+	transition: $transition-base;
+	opacity: .7;
+
+	&:before {
+		content: none;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.slick-disabled {
+		opacity: .2;
+		cursor: default;
+	}
+}
 
 .slick-prev,
 .slick-next {
