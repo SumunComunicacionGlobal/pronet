@@ -1,3 +1,35 @@
+.main-nav-buttons {
+    gap: $spacer * .75;
+    margin-left: $spacer*.5;
+}
+
 #main-nav {
     transition: $transition-base;
+    padding-top: $spacer;
+
+    .navbar-brand {
+
+        img {
+            height: 2rem;
+            width: auto;
+        }
+    }
+
+    &.navbar-dark .navbar-brand img {
+        filter: grayscale(100%) brightness(1000%);
+    }
+
+    #main-menu {
+        gap: $spacer;
+
+        .nav-link {
+            padding: $btn-padding-y-sm $btn-padding-x-sm;
+            border-radius: $btn-border-radius-sm;
+            font-size: $font-size-sm;
+            border: $btn-border-width solid;
+            text-transform: uppercase;
+        }
+
+    }
+
 }

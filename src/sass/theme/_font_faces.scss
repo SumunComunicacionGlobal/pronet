@@ -1,10 +1,14 @@
 // Local font example
-// @font-face {
-//     font-family: 'Bw Modelica';
-//     src: url('../fonts/BwModelica-Regular.eot');
-//     src: url('../fonts/BwModelica-Regular.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/BwModelica-Regular.woff2') format('woff2'),
-//          url('../fonts/BwModelica-Regular.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'PP Mori';
+    src: url('../fonts/PPMori-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PP Mori';
+    src: url('../fonts/PPMori-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}

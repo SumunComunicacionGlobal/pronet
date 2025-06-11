@@ -58,6 +58,11 @@ function smn_cover_block_alt( $block_content, $block ) {
 
 add_filter( 'wp_get_attachment_image_attributes', 'wpdocs_filter_gallery_img_atts', 10, 2 );
 function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
+
+    if (!$attachment || !is_a($attachment, 'WP_Post')) {
+        return $atts;
+    }
+    
     if ( !isset($atts['alt']) || !$atts['alt'] ) {
         $atts['alt'] = smn_get_attachment_alt($attachment->ID);
     }

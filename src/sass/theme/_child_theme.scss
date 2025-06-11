@@ -12,9 +12,18 @@
   font-size: $font-size-sm;
   border-bottom: 1px solid $border-color;
 
-p {
-  margin-bottom: 0;
+  p {
+    margin-bottom: 0;
+  }
 }
+
+#page-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.entry-content > .wp-block-cover:first-child {
+  padding-top: 10rem;
 }
 
 body.navbar-transparent {
@@ -36,6 +45,20 @@ body.scrolled {
 
   #wrapper-navbar {
     box-shadow: $box-shadow-sm;
+  }
+
+}
+
+body {
+
+  &.privacy-policy,
+  &.cmplz-document {
+
+    #content {
+      max-width: 50rem;
+      margin-bottom: $grid-gutter-width*2;
+    }
+
   }
 
 }

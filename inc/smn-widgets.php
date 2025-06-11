@@ -39,7 +39,7 @@ function understrap_widgets_init() {
             'name'          => __( 'Pre footer', 'understrap' ),
             'id'            => 'prefooter',
             'description'   => __( 'Aparece antes del Pie de Página Completo', 'understrap' ),
-            'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget'  => '</div><!-- .footer-widget -->',
             'before_title'  => '<p class="widget-title">',
             'after_title'   => '</p>',
@@ -57,6 +57,19 @@ function understrap_widgets_init() {
 			'after_title'   => '</p>',
 		)
 	);
+
+	register_sidebar(
+        array(
+            'name'          => __( 'Bottom bar', 'understrap' ),
+            'id'            => 'bottom-bar',
+            'description'   => __( 'Aparece después del Copyright', 'understrap' ),
+            'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+            'after_widget'  => '</div><!-- .footer-widget -->',
+            'before_title'  => '<p class="widget-title">',
+            'after_title'   => '</p>',
+        )
+    );
+
 
 }
 

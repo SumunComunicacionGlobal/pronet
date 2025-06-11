@@ -11,7 +11,6 @@ if ( is_category() ) {
 $page_for_posts_id = get_option( 'page_for_posts' );
 $ver_todo_active_class = ( is_home() ) ? 'active' : '';
 $queried_obj = get_queried_object();
-$queried_obj_id = $queried_obj->term_id;
 
 if ( $terms ) { ?>
 
@@ -32,7 +31,7 @@ if ( $terms ) { ?>
 				<?php } ?>
 
 				<?php foreach ( $terms as $term ) { 
-					$active_class = ( $queried_obj_id == $term->term_id ) ? 'active' : '';
+					$active_class = ( $queried_obj && $queried_obj->term_id == $term->term_id ) ? 'active' : '';
 					?>
 
 					<a class="nav-item nav-link <?php echo $active_class; ?>" href="<?php echo esc_url( get_term_link($term) ); ?>"><?php echo $term->name; ?></a>

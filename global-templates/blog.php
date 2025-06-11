@@ -22,7 +22,7 @@ if ( $q->have_posts() ) { ?>
 
 			<?php while ( $q->have_posts() ) { $q->the_post();
 
-				get_template_part( 'loop-templates/content', 'post' );
+				get_template_part( 'loop-templates/content', 'post-compacto' );
 
 			} ?>
 

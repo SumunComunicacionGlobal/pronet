@@ -48,7 +48,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php wp_nav_menu( array(
 						'theme_location'		  => 'legal',
-						'container_class' => 'collapse navbar-collapse navbar-dark',
+						'container_class' => 'collapse navbar-collapse navbar-light',
 						'container_id'    => 'navbarLegal',
 						'menu_class'      => 'navbar-nav mx-auto me-md-0 flex-wrap',
 						'fallback_cb'     => '',
@@ -61,7 +61,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			</div><!--col end -->
 
-			</div><!-- row end -->
+		</div><!-- row end -->
+
+		<?php if ( is_active_sidebar( 'bottom-bar' ) ) : ?>
+			<?php dynamic_sidebar( 'bottom-bar' ); ?>
+		<?php endif; ?>
 
 	</div><!-- .container(-fluid) -->
 

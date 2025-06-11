@@ -19,6 +19,24 @@
 	line-height: $headings-line-height;
 }
 
+p,
+.wp-block-heading {
+
+    &.has-text-align-center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.is-style-numeracion {
+    font-size: $h6-font-size;
+
+    &:before,
+    &:after {
+        content: " - ";
+    }
+}
+
 // ul.wp-block-list {
 //     padding-left: 0;
 
@@ -93,15 +111,19 @@ blockquote,
 @include media-breakpoint-up(lg) {
 
     .display-1 {
+        font-size: 8rem;
+    }
 
+    .display-2 {
+        font-size: 5rem;
     }
     
     h1, .h1 {
-
+        font-size: $font-size-base * 4;
     }
     
     h2, .h2 {
-
+        font-size: $font-size-base * 3;
     }
     
     h3, .h3 {

@@ -3,7 +3,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
 if ( function_exists( 'register_block_style' ) ) {
 
     register_block_style(
@@ -29,6 +28,15 @@ if ( function_exists( 'register_block_style' ) ) {
         array(
             'name'         => 'gapless',
             'label'        => __( 'Sin espacio', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
+    register_block_style(
+        'core/paragraph',
+        array(
+            'name'         => 'numeracion',
+            'label'        => __( 'Numeración', 'smn-admin' ),
             'is_default'   => false,
         )
     );
@@ -78,13 +86,41 @@ if ( function_exists( 'register_block_style' ) ) {
     }
 
     register_block_style(
-        'core/praragrap',
+        'core/praragraph',
         array(
             'name'         => 'cifra-circulo',
             'label'        => __( 'Cifra círculo', 'smn-admin' ),
             'is_default'   => false,
         )
     );
+
+    register_block_style(
+        'core/group',
+        array(
+            'name'         => 'traslucido',
+            'label'        => __( 'Traslúcido', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
+    register_block_style(
+        'core/group',
+        array(
+            'name'         => 'bordered',
+            'label'        => __( 'Bordeado', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
+    register_block_style(
+        'core/media-text',
+        array(
+            'name'         => 'bordered-content',
+            'label'        => __( 'Borde en contenido', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
 
     $carousel_block_types = array(
         'core/group',

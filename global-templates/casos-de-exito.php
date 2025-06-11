@@ -6,7 +6,7 @@ $post_type = 'caso-de-exito';
 
 $args = array(
 	'post_type'			=> $post_type,
-	'posts_per_page'	=> 6,
+	'posts_per_page'	=> 3,
 	'ignore_row'		=> true,
 );
 
@@ -14,17 +14,13 @@ $q = new WP_Query($args);
 
 if ( $q->have_posts() ) { ?>
 
-	<div class="wrapper casos-de-exito-block" id="wrapper-casos-de-exito">
+	<div class="casos-de-exito-block" id="wrapper-casos-de-exito">
 
-		<div class="slick-carousel">
+		<?php while ( $q->have_posts() ) { $q->the_post();
 
-			<?php while ( $q->have_posts() ) { $q->the_post();
+			get_template_part( 'loop-templates/content', $post_type . '-compacto', array( 'order' => $q->current_post + 1 ) );
 
-				get_template_part( 'loop-templates/content', $post_type );
-
-			} ?>
-
-		</div>
+		} ?>
 
 	</div>
 

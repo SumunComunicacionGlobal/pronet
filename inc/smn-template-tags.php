@@ -108,26 +108,7 @@ function smn_breadcrumb() {
 
 function smn_get_navbar_class() {
 
-	$navbar_class = 'bg-primary navbar-dark';
-
-	if ( is_singular() ) {
-
-		$navbar_bg = get_post_meta( get_the_ID(), 'navbar_bg', true );
-
-		switch ($navbar_bg) {
-			case 'navbar-light':
-				$navbar_class = 'bg-light navbar-light';
-				break;
-
-			case 'transparent':
-				$navbar_class = 'navbar-dark';
-				break;
-			
-			default:
-				$navbar_class = 'bg-primary navbar-dark';
-			break;
-		}
-	}
+	$navbar_class = 'navbar-dark';
 
 	return $navbar_class;
 

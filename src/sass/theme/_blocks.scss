@@ -37,17 +37,81 @@ body.understrap-no-sidebar {
 
 	&.alignfull, 
     &.alignwide {
-		padding: $spacer * 2 0;
+		padding: $spacer * 4 0;
 	}
 }
 
+.wp-block-cover {
 
+    .wp-block-cover__inner-container {
+        
+        > *:last-child {
+            margin-bottom: 0;
+        }
 
-.btn,
-.wp-block-buttons .wp-block-button .wp-block-button__link {
+    }
+
+}
+
+.wp-block-group {
+
+    &.is-style-traslucido {
+        background: rgba($white, 0.6);
+        backdrop-filter: blur(6px);
+        padding: $spacer * 2;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-sm;
+        color: $body-color;
+    }
+
+    &.is-layout-grid {
+        gap: $spacer;
+    }
+
+    &.is-style-bordered {
+        border: $border-width solid;
+        border-radius: $border-radius;
+        padding: $spacer;
+    }
+
+    &.is-style-circular {
+
+        
+    }
+
+}
+
+.wp-block-media-text {
+
+    &.is-style-bordered-content {
+        gap: $spacer;
+        
+        .wp-block-media-text__content {
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+            padding: $spacer * 2;
+        }
+
+    }
+
+    &.has-background {
+        border-radius: $border-radius;
+        overflow: hidden;
+
+        .wp-block-media-text__content {
+            padding: $spacer * 2;
+        }
+
+    }
+}
+
+.btn:not([class*="outline"]),
+.wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+    text-transform: uppercase;
 }
 
 .wp-block-buttons {
+    margin-top: $spacer * 4;
 
     .wp-block-button {
 

@@ -8,12 +8,16 @@
 
 #wrapper-footer {
 	padding: $spacer 0 $spacer * 2;
-	background-color: $dark;
-	color: $white;
+	background-color: $body-bg;
 	font-size: $font-size-sm;
+	color: $indigo-100;
 
 	a {
-		color: $white;
+		color: $indigo-100;
+
+		&:hover {
+			color: $indigo;
+		}
 	}
 
 	@include media-breakpoint-down(md) {

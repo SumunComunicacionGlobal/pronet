@@ -20,6 +20,8 @@ function smn_setup() {
         'legal' => __( 'Páginas legales', 'smn-admin' ),
 	) );
 
+    add_theme_support( 'appearance-tools' );
+
 }
 
 function understrap_all_excerpts_get_more_link( $post_excerpt ) {
@@ -31,22 +33,25 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 
         if ( is_search() ) return $post_excerpt;
 
-        $post_excerpt .= '<div class="wp-block-buttons">';
-            $post_excerpt .= '<div class="wp-block-button is-style-arrow-link">';
-                $post_excerpt .= '<a class="wp-block-button__link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
-                    $post_excerpt .= __( 'Read More...', 'understrap' );
-                $post_excerpt .= '</a>';
-            $post_excerpt .= '</div>';
-        $post_excerpt .= '</div>';
+        $r = '<div class="excerpt-row d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-end">';
+            $r .= '<div class="excerpt-text flex-grow-1">';
+            $r .= $post_excerpt;
+            $r .= '</div>';
+            $r .= '<div class="excerpt-link flex-shrink-0">';
+            $r .= '<a class="btn btn-outline-primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
+                $r .= __( 'Conoce iECS', 'smn' ) . ' ↘';
+            $r .= '</a>';
+            $r .= '</div>';
+        $r .= '</div>';
 
     }
 
-	return $post_excerpt;
+	return $r;
 }
 
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 function custom_excerpt_length( $length ) {
-     return 25;
+     return 12;
 }
 
 add_filter( 'get_the_archive_title', 'prefix_category_title' );
