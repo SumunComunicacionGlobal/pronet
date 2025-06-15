@@ -43,6 +43,19 @@ body.understrap-no-sidebar {
 
 .wp-block-cover {
 
+	&.is-style-image-header,
+    #hero {
+		padding-top: 300px;
+		align-items: flex-end;
+		min-height: 640px;
+
+		.entry-title,
+        .wp-block-heading {
+			max-width: 800px;
+            margin-bottom: $spacer !important;
+		}
+	}
+
     .wp-block-cover__inner-container {
         
         > *:last-child {
@@ -82,6 +95,11 @@ body.understrap-no-sidebar {
 }
 
 .wp-block-media-text {
+
+    .wp-block-media-text__media {
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
 
     &.is-style-bordered-content {
         gap: $spacer;
@@ -198,6 +216,7 @@ body.understrap-no-sidebar {
 .wp-block-columns {
     gap: $grid-gutter-width;
     margin-bottom: $grid-gutter-width;
+    justify-content: center;
 
     &.is-style-gapless {
         @include media-breakpoint-up(md) {
@@ -207,30 +226,20 @@ body.understrap-no-sidebar {
 }
 
 .is-style-cifra-circulo {
-    position: relative;
-    @extend .display-1;
-    color: $primary;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 7rem;
-    line-height: 7rem;
-    background-color: $light;
-    // outline: 1rem double $light;
+    margin-bottom: 2em !important;
+    background-color: $primary;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
     text-align: center;
-    // padding: $spacer;
-    margin: $spacer $spacer $spacer * 3;
-    // margin-bottom: $spacer * 3;
+    line-height: 2.5rem;
+    color: $white;
+}
 
-    &:before {
-        content: "";
-        position: absolute;
-        left: -$spacer;
-        right: -$spacer;
-        top: -$spacer;
-        bottom: -$spacer;
-        border: 8px solid $light;
-        border-radius: 7rem;
-    }
+.wp-block-cover .is-style-cifra-circulo {
+    background-color: $white;
+    color: $primary;
 }
 
 .form-steps {

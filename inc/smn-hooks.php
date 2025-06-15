@@ -33,7 +33,7 @@ function smn_wpcf7_form_control_class( $scanned_tag, $replace ) {
    return $scanned_tag;
 }
 
-add_action( 'loop_start', 'archive_loop_start', 10 );
+// add_action( 'loop_start', 'archive_loop_start', 10 );
 function archive_loop_start( $query ) {
 
     if ( ( class_exists('woocommerce') && is_woocommerce() ) || isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
@@ -43,7 +43,7 @@ function archive_loop_start( $query ) {
     }
 }
 
-add_action( 'loop_end', 'archive_loop_end', 10 );
+// add_action( 'loop_end', 'archive_loop_end', 10 );
 function archive_loop_end( $query ) {
 
     if ( ( class_exists('woocommerce') && is_woocommerce() ) || isset( $query->query['ignore_row'] ) && $query->query['ignore_row'] ) return false;
@@ -73,15 +73,13 @@ function smn_body_classes( $classes ) {
             $classes[] = 'cmplz-document';
         }
         
-    } else {
-
     }
 
     return $classes;
 }
 
 
-add_filter( 'post_class', 'bootstrap_post_class', 10, 3 );
+// add_filter( 'post_class', 'bootstrap_post_class', 10, 3 );
 function bootstrap_post_class( $classes, $class, $post_id ) {
 
     if ( class_exists('woocommerce') && is_woocommerce() ) return $classes;
@@ -140,8 +138,6 @@ add_filter( 'nav_menu_submenu_css_class', 'smn_nav_menu_submenu_css_class', 10, 
 
 function smn_add_menu_item_classes( $classes, $item, $args ) {
 
-    // echo '<pre>'; print_r($args); echo '<pre>';
- 
     if ( !$args->walker && 'primary' === $args->theme_location ) {
         $classes[] = "nav-item";
 
@@ -199,4 +195,19 @@ function smn_do_not_include_children_in_product_cat_archive( $query ) {
     ) {
         $query->tax_query->queries[0]['include_children'] = 0;
     }
+}
+
+add_filter( 'get_the_post_type_description', 'smn_get_the_post_type_description', 10, 2 );
+function smn_get_the_post_type_description( $description, $post_type_obj ) {
+
+    $post_type = $post_type_obj->name;
+
+    if ( is_active_sidebar( 'description-' . $post_type ) ) {
+        ob_start();
+        dynamic_sidebar( 'description-' . $post_type );
+        $description = ob_get_clean();
+    }
+
+    return $description;
+
 }

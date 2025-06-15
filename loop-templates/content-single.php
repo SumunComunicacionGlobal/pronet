@@ -18,6 +18,21 @@ defined( 'ABSPATH' ) || exit;
 		understrap_link_pages();
 		?>
 
+		<?php 
+		$gallery_ids = get_field('gallery');
+		if ($gallery_ids) { ?>
+
+			<div class="acf-gallery my-5">
+				<?php foreach ($gallery_ids as $image_id) : ?>
+					<?php echo wp_get_attachment_image($image_id, 'medium_large', false, [
+						'class' => 'img-fluid rounded'
+					]); ?>
+				<?php endforeach; ?>
+			</div>
+
+		<?php }
+		?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

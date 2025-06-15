@@ -86,7 +86,7 @@ if ( function_exists( 'register_block_style' ) ) {
     }
 
     register_block_style(
-        'core/praragraph',
+        'core/paragraph',
         array(
             'name'         => 'cifra-circulo',
             'label'        => __( 'Cifra círculo', 'smn-admin' ),
@@ -99,6 +99,15 @@ if ( function_exists( 'register_block_style' ) ) {
         array(
             'name'         => 'traslucido',
             'label'        => __( 'Traslúcido', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
+    register_block_style(
+        'core/group',
+        array(
+            'name'         => 'cuadricula-cifras',
+            'label'        => __( 'Cuadrícula cifras', 'smn-admin' ),
             'is_default'   => false,
         )
     );

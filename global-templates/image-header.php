@@ -12,7 +12,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 $image_id = false;
 $title = '';
-$description = '';
 
 if ( is_singular() ) {
 	$image_id = get_post_thumbnail_id( get_the_ID() );
@@ -20,7 +19,16 @@ if ( is_singular() ) {
 } elseif ( is_archive() ) {
 	$image_id = get_term_meta( get_queried_object_id(), 'thumbnail_id', true );
 	$title = get_the_archive_title();
-	$description = get_the_archive_description();
+	$title_class = 'display-1';
+} elseif ( is_home() ) {
+	$page_for_posts = get_option( 'page_for_posts' );
+	if ( $page_for_posts ) {
+		$image_id = get_post_thumbnail_id( $page_for_posts );
+		$title = get_the_title( $page_for_posts );
+	} else {
+		$image_id = get_theme_mod( 'blog_header_image' );
+		$title = get_bloginfo( 'name' );
+	}
 }
 ?>
 
@@ -42,13 +50,7 @@ if ( is_singular() ) {
 
 		<?php } ?>
 
-		<h1 class="entry-title"><?php echo $title; ?></h1>
-
-		<?php if ( $description) { ?>
-			
-			<div class="lead"><?php echo $description; ?></div>
-		
-		<?php } ?>
+		<h1 class="entry-title <?php echo $title_class; ?>">↘ <?php echo $title; ?></h1>
 
 	</div>
 

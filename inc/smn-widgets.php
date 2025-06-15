@@ -34,6 +34,17 @@ function understrap_widgets_init() {
 		)
 	);
 
+	register_sidebar(
+		array(
+			'name'          => __( 'Descripción Casos de Éxito', 'smn' ),
+			'id'            => 'description-caso-de-exito',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<p class="widget-title">',
+			'after_title'   => '</p>',
+		)
+	);
+
     register_sidebar(
         array(
             'name'          => __( 'Pre footer', 'understrap' ),

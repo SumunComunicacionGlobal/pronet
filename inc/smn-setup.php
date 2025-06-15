@@ -25,6 +25,7 @@ function smn_setup() {
 }
 
 function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+    
 	if ( ! is_admin() ) {
         global $post;
         if ( !$post->post_excerpt ) {
@@ -44,9 +45,9 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
             $r .= '</div>';
         $r .= '</div>';
 
+        return $r;
     }
 
-	return $r;
 }
 
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

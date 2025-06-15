@@ -85,16 +85,12 @@ body {
     }
 }
 
-.stretched-link {
-    color: $body-color;
-
-    &:hover {
-        text-decoration: none;
-        color: $body-color;
-    }
-}
-
 .entry-footer {
     position: relative;
     z-index: 2;
+}
+
+.backdrop-filter-blur,
+.wp-block-button.backdrop-filter-blur > .wp-block-button__link {
+    backdrop-filter: blur(10px);
 }

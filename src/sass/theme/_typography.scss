@@ -5,7 +5,6 @@
 
 .entry-meta {
     font-size: $font-size-sm;
-    color: $gray-600;
 }
 
 .text-white a {
@@ -17,6 +16,10 @@
 .has-larger-font-size, 
 .has-huge-font-size {
 	line-height: $headings-line-height;
+}
+
+.wp-block-button__link.has-medium-font-size {
+    font-size: $font-size-base * 1.125 !important;
 }
 
 p,
@@ -76,19 +79,19 @@ h6, .h6 {
 }
 
 .display-1 {
-
+    line-height: 1;
 }
 
 .display-2 {
-
+    line-height: 1;
 }
 
 .display-3 {
-
+    line-height: 1;
 }
 
 .display-4 {
-
+    line-height: 1;
 }
 
 small,

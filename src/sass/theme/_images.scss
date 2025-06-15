@@ -30,3 +30,34 @@ a {
 		}
 	}
 }
+
+.acf-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $spacer;
+	justify-content: flex-end;
+
+	img {
+		object-fit: cover;
+		height: 260px;
+
+		@include media-breakpoint-up(md) {
+			width: 30%;
+		
+
+			&:first-child {
+				width: calc( 50% - #{$spacer} );
+			}
+
+		}
+
+		@include media-breakpoint-up(lg) {
+			height: 420px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: 25%;
+		}
+		
+	}
+}

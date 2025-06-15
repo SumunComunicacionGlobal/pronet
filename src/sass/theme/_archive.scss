@@ -1,9 +1,18 @@
+#archive-wrapper {
+	padding-top: $spacer * 6;
+}
+
 .hfeed  article,
 .hfeed-post {
 
 	.wp-post-image {
 		margin-bottom: $spacer;
 	}
+
+}
+
+.archive,
+.blog {
 
 }
 
@@ -14,4 +23,15 @@
 		font-weight: $font-weight-bold;
 	}
 
+}
+
+.loop-header-cover {
+	align-items: flex-end;
+	margin-bottom: $spacer * 6 !important;
+	min-height: 440px;
+
+	.entry-title {
+		max-width: 740px;
+	}
+	
 }

@@ -12,11 +12,6 @@ $post_type = get_post_type();
 
 $current_post_order = isset($args['order']) ? intval($args['order']) : '';
 $current_post_order = (string) str_pad($current_post_order, 2, '0', STR_PAD_LEFT);
-
-$read_more_text = __( 'Léelo', 'smn' );
-if ( 'caso-de-exito' == $post_type ) {
-	$read_more_text = __( 'Ver servicio relacionado', 'smn' );
-}
 ?>
 
 <article <?php post_class( 'position-relative' ); ?> id="post-<?php the_ID(); ?>">
@@ -107,7 +102,7 @@ if ( 'caso-de-exito' == $post_type ) {
 		<?php endif; ?>
 
 		<p class="text-end mb-5">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-lg btn-outline-dark stretched-link"><?php echo $read_more_text; ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-lg btn-outline-dark stretched-link"><?php echo __( 'Ver servicio relacionado ↘', 'smn' ); ?></a>
 		</p>
 
 	</div><!-- .entry-content -->
