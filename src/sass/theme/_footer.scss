@@ -3,20 +3,20 @@
 }
 
 #wrapper-footer-full {
-	background-color: $light;
+	background-color: var(--wp--preset--color--light);
 }
 
 #wrapper-footer {
 	padding: $spacer 0 $spacer * 2;
-	background-color: $body-bg;
+	background-color: var(--bs-body-bg);
 	font-size: $font-size-sm;
-	color: $indigo-100;
+	color: var(--wp--preset--color--secondary-10);
 
 	a {
-		color: $indigo-100;
+		color: var(--wp--preset--color--secondary-10);
 
 		&:hover {
-			color: $indigo;
+			color: var(--wp--preset--color--secondary);
 		}
 	}
 

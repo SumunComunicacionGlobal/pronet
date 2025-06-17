@@ -68,9 +68,9 @@ html {
 	width: 60px;
 	height: 60px;
 	border-radius: $border-radius-pill;
-	background-color: $primary;
+	background-color: var(--wp--preset--color--primary);
 	border: 1px solid transparent;
-	color: $white;
+	color: var(--wp--preset--color--white);
 	opacity: 0;
 	transition: $transition-base;
 	z-index: 10000;

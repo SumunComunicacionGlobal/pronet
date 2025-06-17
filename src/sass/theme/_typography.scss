@@ -8,7 +8,7 @@
 }
 
 .text-white a {
-	color: $white;
+	color: var(--wp--preset--color--white);
 }
 
 .has-large-font-size, 

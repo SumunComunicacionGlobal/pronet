@@ -18,7 +18,7 @@
         margin-left: 0;
         margin-right: 0;
         border-width: $border-width;
-        background-color: $white;
+        background-color: var(--wp--preset--color--white);
         box-shadow: $box-shadow-sm;
     }
     
@@ -30,10 +30,10 @@
     input[type=checkbox] {
         width: 2rem;
         height: 2rem;
-        background-color: white;
+        background-color: var(--wp--preset--color--white);
         border-radius: 50%;
         vertical-align: middle;
-        border: 1px solid $body-color;
+        border: 1px solid var(--bs-body-color);
         margin-right: $spacer * .5;
         appearance: none;
         -webkit-appearance: none;
@@ -44,11 +44,12 @@
         &:focus,
         &:active,
         &:checked:hover {
-          background-color: $light;
+          background-color: var(--wp--preset--color--light);
         }
     
         &:checked {
-          background: url('../img/icono-check.svg') no-repeat center;
+            background: url('../img/icono-check.svg') no-repeat center;
+            background-color: var(--wp--preset--color--white);
         }
       }
 
@@ -63,15 +64,15 @@
         padding: $btn-padding-y 50px;
     
         &:disabled {
-            background-color: $dark;
-            color: $white;
-            opacity: .2;
+            background-color: var(--wp--preset--color--light);
+            color: var(--wp--preset--color--gray-500);
+            opacity: .7;
         }
     
         &:hover {
-            background-color: $dark;
+            background-color: var(--wp--preset--color--dark);
             opacity: .8;
-            color: $white;
+            color: var(--wp--preset--color--white);
         }
 
         + .wpcf7-spinner {
@@ -137,5 +138,28 @@
     &:focus {
       z-index: 3;
     }
+  }
+}
+
+label {
+  
+  > .wpcf7-form-control-wrap,
+  + input,
+  + textarea {
+    margin-top: $spacer * .25;
+    display: block;
+  }
+}
+
+.wp-block-cover {
+  
+  .wpcf7-not-valid-tip {
+    background-color: var(--bs-danger);
+    color: var(--wp--preset--color--white);
+    padding: .25rem;
+    border-radius: $border-radius-sm;
+    margin-top: $spacer * .25;
+    display: inline-block;
+    margin-left: $input-border-radius/2;
   }
 }

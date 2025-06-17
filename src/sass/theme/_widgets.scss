@@ -24,3 +24,13 @@
 		padding-left: 0;
 	}
 }
+
+.wp-block-categories-list,
+.wp-block-latest-posts__list {
+	list-style: none;
+	padding-left: 0;
+	
+	li {
+		margin-bottom: $spacer * .5;
+	}
+}

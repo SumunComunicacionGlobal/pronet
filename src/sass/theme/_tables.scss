@@ -12,7 +12,7 @@ table {
 	}
 
 	th {
-		background-color: $light;
+		background-color: var(--wp--preset--color--light);
 	}
 
 }

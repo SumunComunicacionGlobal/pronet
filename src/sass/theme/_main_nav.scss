@@ -30,6 +30,33 @@
             text-transform: uppercase;
         }
 
+        > li:last-child > .nav-link {
+            padding: .25rem $btn-padding-x-sm * 1,5;
+
+            &::after {
+                content: '\203A';
+                position: relative;
+                display: inline-block;
+                margin-left: 0.5em;
+                font-size: 1.5em;
+                line-height: 0;
+                top: .07em;
+            }
+        }
+
     }
+
+    &.navbar-dark #main-menu > li:last-child > .nav-link {
+        background: rgba($white, 0.3);
+        backdrop-filter: blur(6px);
+        border-color: transparent;
+    }
+
+    &.navbar-light #main-menu > li:last-child > .nav-link {
+        background-color: var(--wp--preset--color--secondary);
+        border-color: var(--wp--preset--color--secondary);
+        color: var(--wp--preset--color--white);
+    }
+
 
 }

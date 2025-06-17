@@ -3,6 +3,10 @@
 	background-position: center center;
 }
 
+.figure-img {
+	margin-bottom: $paragraph-margin-bottom;
+}
+
 .wp-block-image {
 
 	&:not(.is-style-rounded) img {

@@ -27,7 +27,7 @@ $slick-font-size: 40px;
 
 	&:before {
 		font-size: $slick-font-size;
-		color: $black;
+		color: var(--wp--preset--color--black);
 	}
 	
 }
@@ -46,7 +46,7 @@ $slick-font-size: 40px;
 	.slick-next {
 		
 		&:before {
-			color: $white;
+			color: var(--wp--preset--color--white);
 			transition: $transition-base;
 			filter: drop-shadow(0 0 2px $black);
 		}

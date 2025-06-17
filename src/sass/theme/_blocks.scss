@@ -31,6 +31,27 @@ body.understrap-no-sidebar {
 
 }
 
+// Wide alignments and covers.
+#wrapper-prefooter {
+
+	.alignfull {
+		margin: 0 calc(50% - 50vw);
+		max-width: 100vw;
+		width: 100vw;
+
+		> .wp-block-cover__inner-container,
+        > .wp-block-group__inner-container {
+			@include make-container();
+			@each $breakpoint, $container-max-width in $container-max-widths {
+				@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+					max-width: $container-max-width;
+				}
+			}
+		}
+	}
+
+}
+
 
 .wp-block-group, 
 .wp-block-cover {
@@ -74,7 +95,7 @@ body.understrap-no-sidebar {
         padding: $spacer * 2;
         border-radius: $border-radius;
         box-shadow: $box-shadow-sm;
-        color: $body-color;
+        color: var(--bs-body-color);
     }
 
     &.is-layout-grid {
@@ -88,7 +109,54 @@ body.understrap-no-sidebar {
     }
 
     &.is-style-circular {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        aspect-ratio: 1;
 
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: $border-width solid;
+        }
+
+        .wp-block-group__inner-container {
+
+            > * {
+                margin: $spacer auto 0;
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(md) {
+
+                > * {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    &:first-child {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    &:nth-child(n+2) {
+                        padding: $spacer * .5;
+                        background-color: rgba($white, .2);
+                        backdrop-filter: blur(6px);
+                        border-radius: $border-radius-sm;
+                    }
+
+                }
+            }
+
+        }
+
+        
         
     }
 
@@ -162,7 +230,7 @@ body.understrap-no-sidebar {
 
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-    background-color: $primary;
+    background-color: var(--wp--preset--color--primary);
 }
 
 
@@ -183,7 +251,7 @@ body.understrap-no-sidebar {
                 box-shadow: none;
 
                 &:not(.has-text-color) {
-                    color: $body-color;
+                    color: var(--bs-body-color);
                 }
 
                 &:after {
@@ -194,7 +262,7 @@ body.understrap-no-sidebar {
                     mask-image: url('../img/flecha-derecha.svg');
                     mask-repeat: no-repeat;
                     mask-position: center;
-                    background-color: $primary;
+                    background-color: var(--wp--preset--color--primary);
                     
                     position: absolute;
                     right: 1rem;
@@ -227,19 +295,19 @@ body.understrap-no-sidebar {
 
 .is-style-cifra-circulo {
     margin-bottom: 2em !important;
-    background-color: $primary;
+    background-color: var(--wp--preset--color--primary);
     display: inline-block;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     text-align: center;
     line-height: 2.5rem;
-    color: $white;
+    color: var(--wp--preset--color--white);
 }
 
 .wp-block-cover .is-style-cifra-circulo {
-    background-color: $white;
-    color: $primary;
+    background-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--primary);
 }
 
 .form-steps {
@@ -255,7 +323,7 @@ body.understrap-no-sidebar {
                 top: 50%;
                 left: calc( 100% + $spacer*2 );
                 width: $spacer * .5;
-                border-top: 1px dashed $primary;
+                border-top: 1px dashed var(--wp--preset--color--primary);
             }
 
             @include media-breakpoint-up(lg) {
