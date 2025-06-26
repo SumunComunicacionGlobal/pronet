@@ -1,9 +1,17 @@
-$slick-font-size: 40px;
+$slick-font-size: 32px;
 
 .slick-prev-custom,
 .slick-next-custom {
 	transition: $transition-base;
-	opacity: .7;
+	opacity: 1;
+	background-color: $white;
+	border-radius: 100px;
+	padding: 1px;
+
+	svg {
+		width: calc(#{$slick-font-size} - 2px);
+		height: calc(#{$slick-font-size} - 2px);
+	}
 
 	&:before {
 		content: none;
@@ -33,11 +41,11 @@ $slick-font-size: 40px;
 }
 
 .slick-prev {
-	left: $spacer;
+	left: -$slick-font-size * .6;
 }
 
 .slick-next {
-	right: $spacer;
+	right: -$slick-font-size * .6;
 }	
 
 .slick-slider-default {

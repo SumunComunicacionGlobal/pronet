@@ -184,6 +184,38 @@ jQuery('.wp-block-group.is-layout-flex.is-style-slick-carousel-logos, .wp-block-
   ]
 });
 
+jQuery('.wp-block-buttons.is-style-carousel').slick({
+  dots: false,
+  arrows: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  autoplay: false,
+  prevArrow: prevArrow,
+  nextArrow: nextArrow,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }    
+    
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
 
 // Animate each element with the class 'wp-block-cover'
 jQuery('.wp-block-cover, .summary').each(function(index) {

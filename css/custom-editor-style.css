@@ -19465,6 +19465,20 @@ p.has-text-align-center,
   margin-right: auto;
 }
 
+h1:last-child, .is-style-h1:last-child, .h1:last-child,
+h2:last-child,
+.is-style-h2:last-child, .h2:last-child,
+h3:last-child,
+.is-style-h3:last-child, .h3:last-child,
+h4:last-child,
+.is-style-h4:last-child, .h4:last-child,
+h5:last-child,
+.is-style-h5:last-child, .h5:last-child,
+h6:last-child,
+.is-style-h6:last-child, .h6:last-child {
+  margin-bottom: 0 !important;
+}
+
 .is-style-numeracion {
   font-size: 1.125rem;
 }
@@ -19486,6 +19500,13 @@ p.has-text-align-center,
 
 .display-4, .is-style-display-4 {
   line-height: 1;
+}
+
+.display-1 sup, .is-style-display-1 sup,
+.display-2 sup,
+.is-style-display-2 sup {
+  font-size: 0.2em;
+  top: -2.9em;
 }
 
 small,
@@ -19694,6 +19715,9 @@ body.understrap-no-sidebar .alignwide {
   padding: 4rem 0;
 }
 
+.wp-block-cover {
+  align-items: flex-end;
+}
 .wp-block-cover.is-style-image-header,
 .wp-block-cover #hero {
   padding-top: 300px;
@@ -20245,7 +20269,15 @@ label + textarea {
 .slick-prev-custom,
 .slick-next-custom {
   transition: all 0.2s ease-in-out;
-  opacity: 0.7;
+  opacity: 1;
+  background-color: #fff;
+  border-radius: 100px;
+  padding: 1px;
+}
+.slick-prev-custom svg,
+.slick-next-custom svg {
+  width: calc(32px - 2px);
+  height: calc(32px - 2px);
 }
 .slick-prev-custom:before,
 .slick-next-custom:before {
@@ -20264,21 +20296,21 @@ label + textarea {
 .slick-prev,
 .slick-next {
   z-index: 1;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 .slick-prev:before,
 .slick-next:before {
-  font-size: 40px;
+  font-size: 32px;
   color: var(--wp--preset--color--black);
 }
 
 .slick-prev {
-  left: 1rem;
+  left: -19.2px;
 }
 
 .slick-next {
-  right: 1rem;
+  right: -19.2px;
 }
 
 .slick-slider-default .slick-prev:before,
@@ -20290,16 +20322,16 @@ label + textarea {
 
 .slick-carousel {
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 64px;
 }
 .slick-carousel .slick-prev,
 .slick-carousel .slick-next {
   top: unset;
-  bottom: -60px;
+  bottom: -48px;
 }
 .slick-carousel .slick-prev {
   left: unset;
-  right: 48px;
+  right: 38.4px;
 }
 .slick-carousel .slick-next {
   right: 0;

@@ -31,6 +31,19 @@ p,
     }
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+
+    &:last-child {
+        margin-bottom: 0 !important;
+    }
+
+}
+
 .is-style-numeracion {
     font-size: $h6-font-size;
 
@@ -92,6 +105,16 @@ h6, .h6 {
 
 .display-4 {
     line-height: 1;
+}
+
+.display-1,
+.display-2 {
+
+    sup {
+        font-size: .2em;
+        top: -2.9em;
+    }
+
 }
 
 small,
