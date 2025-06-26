@@ -15111,6 +15111,14 @@
 	  ]
 	});
 
+	// Add opacity-0 and hidden classes as early as possible to prevent flickering
+	document.addEventListener("DOMContentLoaded", function () {
+	  document.querySelectorAll('.summary').forEach(el => el.classList.add('opacity-0', 'hidden'));
+	  document.querySelectorAll('#hero .wp-block-heading').forEach(el => el.classList.add('opacity-0', 'hidden'));
+	  document.querySelectorAll('.wp-block-media-text__media').forEach(el => el.classList.add('opacity-0', 'hidden'));
+	  document.querySelectorAll('.is-layout-grid > *, .product-category, li.product, .subcategory > .card-body').forEach(el => el.classList.add('opacity-0', 'hidden'));
+	});
+
 	// jQuery('.wp-block-cover, .summary').each(function(index) {
 	jQuery('.summary').each(function (index) {
 	  gsapWithCSS.from(this, {
