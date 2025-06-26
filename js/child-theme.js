@@ -15111,38 +15111,47 @@
 	  ]
 	});
 
-	// Animate each element with the class 'wp-block-cover'
 	jQuery('.wp-block-cover, .summary').each(function (index) {
 	  gsapWithCSS.from(this, {
-	    opacity: 0,
-	    scrollTrigger: this,
-	    y: 100
+	    autoAlpha: 0,
+	    // Oculta y hace opaco el elemento
+	    y: 100,
+	    scrollTrigger: {
+	      trigger: this,
+	      start: "top 90%",
+	      toggleActions: "play none none none"
+	    }
 	  });
 	});
 	jQuery('.wp-block-cover__inner-container').each(function (index) {
 	  gsapWithCSS.from(this, {
-	    opacity: 0,
-	    scrollTrigger: this,
+	    autoAlpha: 0,
 	    y: 50,
 	    rotation: 2,
-	    duration: 1
+	    duration: 1,
+	    scrollTrigger: {
+	      trigger: this,
+	      start: "top 90%",
+	      toggleActions: "play none none none"
+	    }
 	  });
 	});
-
-	// Animate each element with the class 'wp-block-media-text__media'
 	jQuery('.wp-block-media-text__media').each(function () {
 	  gsapWithCSS.from(this, {
-	    opacity: 0,
-	    scrollTrigger: this,
-	    x: -100
+	    autoAlpha: 0,
+	    x: -100,
+	    scrollTrigger: {
+	      trigger: this,
+	      start: "top 90%",
+	      toggleActions: "play none none none"
+	    }
 	  });
 	});
 	ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body", {
 	  onEnter: elements => {
 	    gsapWithCSS.from(elements, {
-	      opacity: 0,
-	      y: 60,
 	      autoAlpha: 0,
+	      y: 60,
 	      stagger: 0.1
 	    });
 	  },
