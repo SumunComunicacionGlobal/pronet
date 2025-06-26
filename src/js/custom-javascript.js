@@ -217,7 +217,8 @@ jQuery('.wp-block-buttons.is-style-carousel').slick({
 });
 
 
-jQuery('.wp-block-cover, .summary').each(function(index) {
+// jQuery('.wp-block-cover, .summary').each(function(index) {
+jQuery('.summary').each(function(index) {
   gsap.from(this, {
     autoAlpha: 0, // Oculta y hace opaco el elemento
     y: 100,
@@ -229,19 +230,19 @@ jQuery('.wp-block-cover, .summary').each(function(index) {
   });
 });
 
-jQuery('.wp-block-cover__inner-container').each(function(index) {
-  gsap.from(this, {
-    autoAlpha: 0,
-    y: 50,
-    rotation: 2,
-    duration: 1,
-    scrollTrigger: {
-      trigger: this,
-      start: "top 90%",
-      toggleActions: "play none none none"
-    }
-  });
-});
+// jQuery('.wp-block-cover__inner-container').each(function(index) {
+//   gsap.from(this, {
+//     autoAlpha: 0,
+//     y: 50,
+//     rotation: 2,
+//     duration: 1,
+//     scrollTrigger: {
+//       trigger: this,
+//       start: "top 90%",
+//       toggleActions: "play none none none"
+//     }
+//   });
+// });
 
 jQuery('.wp-block-media-text__media').each(function() {
   gsap.from(this, {
