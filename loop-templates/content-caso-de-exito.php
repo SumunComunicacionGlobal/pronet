@@ -12,6 +12,8 @@ $post_type = get_post_type();
 
 $current_post_order = isset($args['order']) ? intval($args['order']) : '';
 $current_post_order = (string) str_pad($current_post_order, 2, '0', STR_PAD_LEFT);
+
+$link = get_field( 'link' );
 ?>
 
 <article <?php post_class( 'position-relative' ); ?> id="post-<?php the_ID(); ?>">
@@ -101,9 +103,11 @@ $current_post_order = (string) str_pad($current_post_order, 2, '0', STR_PAD_LEFT
 			</div>
 		<?php endif; ?>
 
-		<p class="text-end mb-5">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-lg btn-outline-dark stretched-link"><?php echo __( 'Ver servicio relacionado ↘', 'smn' ); ?></a>
-		</p>
+		<?php if ( $link ) : ?>
+			<p class="text-end mb-5">
+				<a href="<?php echo esc_url( $link ); ?>" class="btn btn-lg btn-outline-dark stretched-link"><?php echo __( 'Ver más información ↘', 'smn' ); ?></a>
+			</p>
+		<?php endif; ?>
 
 	</div><!-- .entry-content -->
 
