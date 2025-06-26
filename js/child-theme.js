@@ -15126,19 +15126,19 @@
 	});
 
 	// jQuery('.wp-block-cover__inner-container').each(function(index) {
-	//   gsap.from(this, {
-	//     autoAlpha: 0,
-	//     y: 50,
-	//     rotation: 2,
-	//     duration: 1,
-	//     scrollTrigger: {
-	//       trigger: this,
-	//       start: "top 90%",
-	//       toggleActions: "play none none none"
-	//     }
-	//   });
-	// });
-
+	jQuery('#hero .wp-block-heading').each(function (index) {
+	  gsapWithCSS.from(this, {
+	    autoAlpha: 0,
+	    y: 50,
+	    rotation: 2,
+	    duration: 1,
+	    scrollTrigger: {
+	      trigger: this,
+	      start: "top 90%",
+	      toggleActions: "play none none none"
+	    }
+	  });
+	});
 	jQuery('.wp-block-media-text__media').each(function () {
 	  gsapWithCSS.from(this, {
 	    autoAlpha: 0,
