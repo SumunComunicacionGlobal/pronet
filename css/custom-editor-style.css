@@ -20195,6 +20195,7 @@ label + textarea {
   }
   #main-nav #main-menu .nav-link {
     font-weight: 600;
+    font-size: 1.25rem;
   }
   #main-nav #main-menu > li:last-child > .nav-link {
     padding: 0.5rem 1.5rem;
@@ -20202,6 +20203,17 @@ label + textarea {
     border-radius: 50rem;
     margin-top: 1rem;
     display: inline-block;
+  }
+  #main-nav #main-menu .menu-item.dropdown > .nav-link {
+    display: none;
+  }
+  #main-nav #main-menu .dropdown-menu {
+    display: block;
+    background-color: transparent;
+  }
+  #main-nav #main-menu .dropdown-item {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .offcanvas.showing, .offcanvas.show {

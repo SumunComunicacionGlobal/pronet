@@ -265,6 +265,7 @@ jQuery('#main-nav .offcanvas').on('show.bs.offcanvas', function () {
     autoAlpha: 0,
     stagger: 0.1,
     duration: 0.3,
-    ease: "power2.out"
+    ease: "power2.out",
+    delay: 0.2
   });
 });

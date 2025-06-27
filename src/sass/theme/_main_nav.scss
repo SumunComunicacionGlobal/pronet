@@ -96,6 +96,7 @@
             
             .nav-link {
                 font-weight: $font-weight-bold;
+                font-size: $h5-font-size;
             }
 
             > li:last-child > .nav-link {
@@ -104,6 +105,20 @@
                 border-radius: $btn-border-radius;
                 margin-top: $spacer;
                 display: inline-block;
+            }
+
+            .menu-item.dropdown > .nav-link {
+                display: none;
+            }
+
+            .dropdown-menu {
+                display: block;
+                background-color: transparent;
+            }
+
+            .dropdown-item {
+                padding-left: 0;
+                padding-right: 0;
             }
 
         }
