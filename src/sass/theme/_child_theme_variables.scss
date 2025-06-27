@@ -625,7 +625,7 @@ $font-sizes: (
 
 // scss-docs-start headings-variables
 // $headings-margin-bottom:      $spacer * .5 !default;
-$headings-margin-bottom:      2em !important !default;
+$headings-margin-bottom:      2em;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 // $headings-font-weight:        500 !default;
@@ -1139,7 +1139,7 @@ $navbar-brand-margin-end:           1rem !default;
 $navbar-toggler-padding-y:          .25rem !default;
 $navbar-toggler-padding-x:          .75rem !default;
 $navbar-toggler-font-size:          $font-size-lg !default;
-$navbar-toggler-border-radius:      $btn-border-radius !default;
+$navbar-toggler-border-radius:      .25rem;
 $navbar-toggler-focus-width:        $btn-focus-width !default;
 $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
 
@@ -1152,7 +1152,7 @@ $navbar-light-disabled-color:       rgba($black, .3) !default;
 // $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 // $navbar-light-toggler-border-color: rgba($black, .1) !default;
 // $navbar-light-toggler-icon-bg:      url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='4' stroke-linecap='butt' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-$navbar-light-toggler-icon-bg:      url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="53" height="37" viewBox="0 0 53 37"%3E%3Cg id="Componente_4_2" data-name="Componente 4 – 2" transform="translate(0 1.5)"%3E%3Cline id="Línea_33" data-name="Línea 33" x2="53" fill="none" stroke="%23000" stroke-width="3"/%3E%3Cline id="Línea_34" data-name="Línea 34" x2="53" transform="translate(0 17)" fill="none" stroke="%23000" stroke-width="3"/%3E%3Cline id="Línea_35" data-name="Línea 35" x2="53" transform="translate(0 34)" fill="none" stroke="%23000" stroke-width="3"/%3E%3C/g%3E%3C/svg%3E%0A');
+// $navbar-light-toggler-icon-bg:      url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="53" height="37" viewBox="0 0 53 37"%3E%3Cg id="Componente_4_2" data-name="Componente 4 – 2" transform="translate(0 1.5)"%3E%3Cline id="Línea_33" data-name="Línea 33" x2="53" fill="none" stroke="%23000" stroke-width="3"/%3E%3Cline id="Línea_34" data-name="Línea 34" x2="53" transform="translate(0 17)" fill="none" stroke="%23000" stroke-width="3"/%3E%3Cline id="Línea_35" data-name="Línea 35" x2="53" transform="translate(0 34)" fill="none" stroke="%23000" stroke-width="3"/%3E%3C/g%3E%3C/svg%3E%0A');
 $navbar-light-toggler-border-color:	transparent;
 $navbar-light-brand-color:          $navbar-light-active-color !default;
 $navbar-light-brand-hover-color:    $navbar-light-active-color !default;
@@ -1457,7 +1457,7 @@ $modal-content-box-shadow-xs:       $box-shadow-sm !default;
 $modal-content-box-shadow-sm-up:    $box-shadow !default;
 
 $modal-backdrop-bg:                 $black !default;
-$modal-backdrop-opacity:            .5 !default;
+$modal-backdrop-opacity:            .8;
 
 $modal-header-border-color:         var(--#{$prefix}border-color) !default;
 $modal-header-border-width:         $modal-content-border-width !default;
@@ -1656,10 +1656,10 @@ $btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%) !default
 
 // scss-docs-start offcanvas-variables
 // $offcanvas-padding-y:               $modal-inner-padding !default;
-$offcanvas-padding-y:               $modal-inner-padding * 2;
+$offcanvas-padding-y:               $modal-inner-padding * 1.25;
 $offcanvas-padding-x:               $modal-inner-padding !default;
 // $offcanvas-horizontal-width:        400px !default;
-$offcanvas-horizontal-width:        100%;
+$offcanvas-horizontal-width:        300px;
 $offcanvas-vertical-height:         100vh !default;
 $offcanvas-transition-duration:     .3s !default;
 $offcanvas-border-color:            $modal-content-border-color !default;

@@ -219,8 +219,8 @@ body.understrap-no-sidebar {
 
             &:before {
                 display: block;
-                width: 128px;
-                height: 128px;
+                width: 196px;
+                height: 196px;
                 margin: 0 auto $spacer;
             }
 
@@ -270,6 +270,7 @@ body.understrap-no-sidebar {
 
 .wp-block-buttons {
     margin-top: $spacer * 4;
+    margin-bottom: $paragraph-margin-bottom;
 
     .wp-block-button {
 
@@ -291,25 +292,16 @@ body.understrap-no-sidebar {
             &:active {
                 box-shadow: $btn-active-box-shadow;
             }
+
+            &:not(.has-text-color):hover {
+                color: inherit;
+            }
+
         }
 
         &.is-style-outline .wp-block-button__link {
             border-width: $btn-border-width;
         }
-
-    }
-}
-
-
-.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-    background-color: var(--wp--preset--color--primary);
-}
-
-
-.wp-block-buttons {
-    margin-bottom: $paragraph-margin-bottom;
-
-    .wp-block-button {
 
         &.is-style-arrow-link {
  
@@ -350,6 +342,19 @@ body.understrap-no-sidebar {
 
         }
 
+        &.backdrop-filter-blur .wp-block-button__link:hover {
+            background-color: rgba($primary, .3) !important;
+        }
+
+    }
+}
+
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
+    background-color: var(--wp--preset--color--primary);
+
+    &:hover {
+        background-color: var(--wp--preset--color--primary-80);
     }
 }
 
@@ -362,6 +367,10 @@ body.understrap-no-sidebar {
         @include media-breakpoint-up(md) {
             gap: 0;
         }
+    }
+
+    .wp-block-column > .wp-block-group.is-style-traslucido {
+        height: 100%;
     }
 }
 
@@ -410,4 +419,8 @@ body.understrap-no-sidebar {
 
     }
 
+}
+
+.btn-close {
+    border-radius: 0.25rem;
 }

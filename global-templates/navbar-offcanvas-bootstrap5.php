@@ -37,9 +37,14 @@ $navbar_class = smn_get_navbar_class();
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="offcanvas offcanvas-bottom bg-primary" tabindex="-1" id="navbarNavOffcanvas">
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="navbarNavOffcanvas">
 
-			<div class="offcanvas-header justify-content-end">
+			<div class="offcanvas-header justify-content-between">
+				<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+					<div class="offcanvas-logo">
+						<?php the_custom_logo(); ?>
+					</div>
+				<?php endif; ?>
 				<button
 					class="btn-close btn-close-white text-reset"
 					type="button"
@@ -55,7 +60,7 @@ $navbar_class = smn_get_navbar_class();
 					'theme_location'  => 'primary',
 					'container_class' => 'offcanvas-body',
 					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
+					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 flex-wrap pe-3',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,

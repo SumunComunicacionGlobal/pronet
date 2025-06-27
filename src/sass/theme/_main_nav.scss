@@ -20,18 +20,12 @@
     }
 
     #main-menu {
-        gap: $spacer;
 
         .nav-link {
-            padding: .25rem $btn-padding-x-sm;
-            border-radius: $btn-border-radius-sm;
-            font-size: $font-size-sm;
-            border: $btn-border-width solid;
             text-transform: uppercase;
         }
 
         > li:last-child > .nav-link {
-            padding: .25rem $btn-padding-x-sm * 1,5;
 
             &::after {
                 content: '\203A';
@@ -49,17 +43,90 @@
 
     }
 
-    &.navbar-dark #main-menu > li:last-child > .nav-link {
-        background: rgba($white, 0.3);
-        backdrop-filter: blur(6px);
-        border-color: transparent;
+    .navbar-toggler {
+        margin-right: -$navbar-toggler-padding-x;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+
+    #main-nav {
+
+        #main-menu {
+            gap: $spacer;
+
+            .nav-link {
+                padding: .25rem $btn-padding-x-sm;
+                border-radius: $btn-border-radius-sm;
+                font-size: $font-size-sm;
+                border: $btn-border-width solid;
+            }
+
+            > li:last-child > .nav-link {
+                padding: .25rem $btn-padding-x-sm * 1,5;
+            }
+
+        }
+
+        &.navbar-dark #main-menu > li:last-child > .nav-link {
+            background: rgba($white, 0.3);
+            backdrop-filter: blur(6px);
+            border-color: transparent;
+        }
+
+        &.navbar-light #main-menu > li:last-child > .nav-link {
+            background-color: var(--wp--preset--color--secondary);
+            border-color: var(--wp--preset--color--secondary);
+            color: var(--wp--preset--color--white);
+        }       
+
     }
 
-    &.navbar-light #main-menu > li:last-child > .nav-link {
-        background-color: var(--wp--preset--color--secondary);
-        border-color: var(--wp--preset--color--secondary);
-        color: var(--wp--preset--color--white);
+}
+
+@include media-breakpoint-down(lg) {
+
+    #main-nav {
+        
+        > .container {
+            max-width: unset;
+        }
+
+        #main-menu {
+            
+            .nav-link {
+                font-weight: $font-weight-bold;
+            }
+
+            > li:last-child > .nav-link {
+                padding: $btn-padding-y $btn-padding-x;
+                border: $btn-border-width solid;
+                border-radius: $btn-border-radius;
+                margin-top: $spacer;
+                display: inline-block;
+            }
+
+        }
+
     }
 
+}
 
+.offcanvas {
+
+    &.showing,
+    &.show {
+        background-color: var(--bs-dark);
+        background-image: url('../img/offcanvas-bg.jpg');
+        background-size: cover;
+        background-position: center;
+
+        &.offcanvas-start {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            margin-top: $spacer;
+            margin-bottom: $spacer;
+        }
+    
+    }
 }

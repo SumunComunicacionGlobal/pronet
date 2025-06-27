@@ -217,21 +217,9 @@ jQuery('.wp-block-buttons.is-style-carousel').slick({
 });
 
 
-// jQuery('.wp-block-cover, .summary').each(function(index) {
-jQuery('.summary').each(function(index) {
-  gsap.from(this, {
-    autoAlpha: 0, // Oculta y hace opaco el elemento
-    y: 100,
-    scrollTrigger: {
-      trigger: this,
-      start: "top 90%",
-      toggleActions: "play none none none"
-    }
-  });
-});
 
-// jQuery('.wp-block-cover__inner-container').each(function(index) {
-jQuery('#hero .wp-block-heading').each(function(index) {
+// Animación hero
+jQuery('#hero .wp-block-cover__inner-container, .caso-de-exito-compacto-text').each(function(index) {
   gsap.from(this, {
     autoAlpha: 0,
     y: 50,
@@ -245,6 +233,7 @@ jQuery('#hero .wp-block-heading').each(function(index) {
   });
 });
 
+// Animación media-text
 jQuery('.wp-block-media-text__media').each(function() {
   gsap.from(this, {
     autoAlpha: 0,
@@ -257,13 +246,25 @@ jQuery('.wp-block-media-text__media').each(function() {
   });
 });
 
+// Animación en lote para grids, productos, etc.
 ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body", {
   onEnter: elements => {
     gsap.from(elements, {
       autoAlpha: 0,
       y: 60,
-      stagger: 0.1,
+      stagger: 0.1
     });
   },
   once: true
+});
+
+jQuery('#main-nav .offcanvas').on('shown.bs.offcanvas', function () {
+  const menuItems = document.querySelectorAll('#main-menu > .menu-item');
+  gsap.from(menuItems, {
+    x: -50,
+    autoAlpha: 0,
+    stagger: 0.1,
+    duration: 0.6,
+    ease: "power2.out"
+  });
 });

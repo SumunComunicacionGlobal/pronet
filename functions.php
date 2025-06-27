@@ -15,7 +15,7 @@ $understrap_inc_dir = 'inc';
 
 // Array of files to include.
 $understrap_includes = array(
-    '/smn-dummy-content.php',
+    // '/smn-dummy-content.php',
     '/smn-security.php',
     '/smn-seo.php',
     '/smn-widgets.php',

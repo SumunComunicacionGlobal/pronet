@@ -11,15 +11,31 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 $image_id = false;
+$header_video_id = false;
 $title = '';
 
 if ( is_singular() ) {
 	$image_id = get_post_thumbnail_id( get_the_ID() );
 	$title = get_the_title();
 } elseif ( is_archive() ) {
-	$image_id = get_term_meta( get_queried_object_id(), 'thumbnail_id', true );
 	$title = get_the_archive_title();
 	$title_class = 'display-1';
+	if ( is_tax() ) {
+		$image_id = get_term_meta( get_queried_object_id(), 'thumbnail_id', true );
+	} elseif ( is_post_type_archive() ) {
+		$post_type = get_post_type();
+		$post_type_object = get_post_type_object( $post_type );
+		$description = $post_type_object->description;
+		if ( $description ) {
+			$title = $description;
+		}
+
+		$header_video_id = get_field( 'header_video_' . $post_type, 'option' );
+		if ( ! $header_video_id ) {
+			$image_id = get_field( 'header_image_' . $post_type, 'option' );
+		}
+		
+	}
 } elseif ( is_home() ) {
 	$page_for_posts = get_option( 'page_for_posts' );
 	if ( $page_for_posts ) {
@@ -36,7 +52,11 @@ if ( is_singular() ) {
 
 	<span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
 
-	<?php if ( $image_id ) echo wp_get_attachment_image( $image_id, 'large', false, array('class' => 'wp-block-cover__image-background') ); ?>
+	<?php if ( $header_video_id ) : ?>
+		<video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="<?php echo wp_get_attachment_url( $header_video_id ); ?>" data-object-fit="cover"></video>
+	<?php elseif ( $image_id ) : 
+		echo wp_get_attachment_image( $image_id, 'large', false, array('class' => 'wp-block-cover__image-background') ); 
+	endif; ?>
 
 	<div class="wp-block-cover__inner-container container">
 
@@ -50,7 +70,10 @@ if ( is_singular() ) {
 
 		<?php } ?>
 
-		<h1 class="entry-title <?php echo $title_class; ?>">↘ <?php echo $title; ?></h1>
+		<h1 class="entry-title <?php echo $title_class; ?>">
+			<?php if ( !is_post_type_archive() ) echo '↘ '; ?>
+			<?php echo $title; ?>
+		</h1>
 
 	</div>
 
