@@ -15150,13 +15150,13 @@
 	  },
 	  once: true
 	});
-	jQuery('#main-nav .offcanvas').on('shown.bs.offcanvas', function () {
+	jQuery('#main-nav .offcanvas').on('show.bs.offcanvas', function () {
 	  const menuItems = document.querySelectorAll('#main-menu > .menu-item');
 	  gsapWithCSS.from(menuItems, {
-	    x: -50,
+	    x: -30,
 	    autoAlpha: 0,
 	    stagger: 0.1,
-	    duration: 0.6,
+	    duration: 0.3,
 	    ease: "power2.out"
 	  });
 	});
