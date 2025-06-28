@@ -13546,7 +13546,12 @@ body.understrap-no-sidebar .alignwide {
 .wp-block-cover #hero {
   padding-top: 300px;
   align-items: flex-end;
-  min-height: 640px;
+}
+@media (min-width: 992px) {
+  .wp-block-cover.is-style-image-header,
+  .wp-block-cover #hero {
+    min-height: 640px;
+  }
 }
 .wp-block-cover.is-style-image-header .entry-title,
 .wp-block-cover.is-style-image-header .wp-block-heading,
@@ -13757,9 +13762,13 @@ body.understrap-no-sidebar .alignwide {
 }
 
 .wp-block-columns {
-  gap: 3rem;
-  margin-bottom: 3rem;
   justify-content: center;
+}
+@media (min-width: 783px) {
+  .wp-block-columns {
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 @media (min-width: 783px) {
   .wp-block-columns.is-style-gapless {
