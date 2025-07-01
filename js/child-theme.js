@@ -15140,7 +15140,7 @@
 	});
 
 	// Animación en lote para grids, productos, etc.
-	ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body", {
+	ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body, .is-style-list-grid > li", {
 	  onEnter: elements => {
 	    gsapWithCSS.from(elements, {
 	      autoAlpha: 0,

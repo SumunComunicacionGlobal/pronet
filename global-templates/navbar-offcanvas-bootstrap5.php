@@ -15,9 +15,9 @@ $navbar_class = smn_get_navbar_class();
 
 <nav id="main-nav" class="navbar navbar-expand-lg <?php echo $navbar_class; ?>" aria-labelledby="main-nav-label">
 
-	<h2 id="main-nav-label" class="screen-reader-text">
+	<p id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
-	</h2>
+	</p>
 
 
 	<div class="<?php echo esc_attr( $container ); ?>">

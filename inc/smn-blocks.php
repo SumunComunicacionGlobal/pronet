@@ -50,6 +50,15 @@ if ( function_exists( 'register_block_style' ) ) {
         )
     );
        
+    register_block_style(
+        'core/list',
+        array(
+            'name'         => 'list-grid',
+            'label'        => __( 'Grid', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+       
     $display_text_block_types = array(
         'core/paragraph',
         'core/heading',
@@ -117,6 +126,15 @@ if ( function_exists( 'register_block_style' ) ) {
         array(
             'name'         => 'bordered',
             'label'        => __( 'Bordeado', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
+    register_block_style(
+        'core/group',
+        array(
+            'name'         => 'collapse',
+            'label'        => __( 'Desplegable', 'smn-admin' ),
             'is_default'   => false,
         )
     );
@@ -213,6 +231,60 @@ function list_block_wrapper( $block_content, $block ) {
         $block_content = str_replace( 
             array( '<ul>', '<ol>'), 
             array( '<ul class="wp-block-list">', '<ol class="wp-block-list">'), $block_content );
+    }
+    return $block_content;
+}
+
+add_filter( 'render_block', 'add_bootstrap_accordion_to_group', 20, 2 );
+function add_bootstrap_accordion_to_group( $block_content, $block ) {
+    if (
+        isset( $block['blockName'] ) &&
+        $block['blockName'] === 'core/group' &&
+        isset( $block['attrs']['className'] ) &&
+        strpos( $block['attrs']['className'], 'is-style-collapse' ) !== false
+    ) {
+        static $accordion_id = 0;
+        $accordion_id++;
+        $accordion_parent_id = 'accordionGroup' . $accordion_id;
+        $collapse_content_id = 'collapseContent' . $accordion_id;
+        $heading_id = 'heading' . $accordion_id;
+
+        // Extrae el contenido interno del grupo
+        if ( preg_match( '/(<div[^>]*class="[^"]*wp-block-group[^"]*"[^>]*>)(.*)(<\/div>)/is', $block_content, $matches ) ) {
+            $group_open  = $matches[1];
+            $group_inner = $matches[2];
+            $group_close = $matches[3];
+
+            // Encuentra el primer bloque (párrafo o encabezado)
+            if ( preg_match( '/(<(p|h[1-6])[^>]*>.*?<\/\2>)/is', $group_inner, $title_match ) ) {
+                $title_block = $title_match[1];
+                // Elimina el primer bloque del contenido interno
+                $group_inner_wo_title = preg_replace( '/'.preg_quote($title_block, '/').'/is', '', $group_inner, 1 );
+            } else {
+                // Si no hay título, usa un texto por defecto
+                $title_block = '<p>Mostrar/Ocultar</p>';
+                $group_inner_wo_title = $group_inner;
+            }
+
+            // Construye el acordeón de Bootstrap 5
+            $accordion = '
+<div class="accordion" id="' . esc_attr( $accordion_parent_id ) . '">
+  <div class="accordion-item">
+    <p class="accordion-header" id="' . esc_attr( $heading_id ) . '">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#' . esc_attr( $collapse_content_id ) . '" aria-expanded="false" aria-controls="' . esc_attr( $collapse_content_id ) . '">'
+        . $title_block .
+      '</button>
+    </p>
+    <div id="' . esc_attr( $collapse_content_id ) . '" class="accordion-collapse collapse" aria-labelledby="' . esc_attr( $heading_id ) . '" data-bs-parent="#' . esc_attr( $accordion_parent_id ) . '">
+      <div class="accordion-body">'
+        . $group_inner_wo_title .
+      '</div>
+    </div>
+  </div>
+</div>';
+
+            $block_content = $group_open . $accordion . $group_close;
+        }
     }
     return $block_content;
 }

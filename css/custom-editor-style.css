@@ -19768,6 +19768,9 @@ body.understrap-no-sidebar .alignwide {
 .wp-block-group.is-style-bordered .wp-block-group__inner-container > *:last-child {
   margin-bottom: 0 !important;
 }
+.wp-block-group.has-text-color.has-background {
+  display: inline-block;
+}
 .wp-block-group.has-text-color.has-background figure.wp-block-image img {
   margin-bottom: 0;
   padding: 0.25rem;
@@ -20004,6 +20007,43 @@ body.understrap-no-sidebar .alignwide {
 
 .btn-close {
   border-radius: 0.25rem;
+}
+
+.wp-block-list li {
+  margin-bottom: 0.25em;
+}
+.wp-block-list li::marker {
+  content: "↘ ";
+  color: var(--wp--preset--color--primary);
+  font-size: 1.2em;
+}
+.wp-block-list.is-style-list-grid {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.5rem;
+}
+.wp-block-list.is-style-list-grid li {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: var(--wp--preset--color--light);
+}
+.wp-block-list.is-style-list-grid li::marker {
+  content: none;
+}
+.wp-block-list.is-style-list-grid li:before {
+  content: "↘";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.accordion {
+  margin-bottom: 1rem !important;
+}
+.accordion .accordion-item {
+  overflow: hidden;
 }
 
 .wp-block-table th, .wp-block-table td {

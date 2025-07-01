@@ -247,7 +247,7 @@ jQuery('.wp-block-media-text__media').each(function() {
 });
 
 // Animación en lote para grids, productos, etc.
-ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body", {
+ScrollTrigger.batch(".is-layout-grid > *, .product-category, li.product, .subcategory > .card-body, .is-style-list-grid > li", {
   onEnter: elements => {
     gsap.from(elements, {
       autoAlpha: 0,
