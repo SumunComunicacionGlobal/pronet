@@ -13,7 +13,8 @@ $post_type = get_post_type();
 $current_post_order = isset($args['order']) ? intval($args['order']) : '';
 $current_post_order = (string) str_pad($current_post_order, 2, '0', STR_PAD_LEFT);
 
-$link = get_field( 'link' );
+$link = get_permalink();
+// $link = get_field( 'link' );
 ?>
 
 <article <?php post_class( 'position-relative' ); ?> id="post-<?php the_ID(); ?>">

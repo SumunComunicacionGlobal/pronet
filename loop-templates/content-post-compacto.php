@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element has-primary-background-color has-background text-white">
+	<div class="wp-block-media-text position-relative is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element has-primary-background-color has-background text-white">
 
 		<figure class="wp-block-media-text__media">
 			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>

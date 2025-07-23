@@ -211,3 +211,12 @@ function smn_get_the_post_type_description( $description, $post_type_obj ) {
     return $description;
 
 }
+
+add_filter( 'post_type_link', 'smn_modify_permalink', 10, 4 );
+function smn_modify_permalink( $post_link, $post, $leavename, $sample ) {
+    $custom_link = get_field( 'link' );
+    if ( $custom_link ) {
+        return esc_url( $custom_link );
+    }
+    return $post_link;
+}
