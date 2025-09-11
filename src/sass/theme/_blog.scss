@@ -1,0 +1,6 @@
+@include media-breakpoint-up(lg) {
+
+    #right-sidebar {
+        margin-left: $grid-gutter-width * 2;
+    }
+}

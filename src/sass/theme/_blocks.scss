@@ -363,7 +363,6 @@ body.understrap-no-sidebar {
 }
 
 .wp-block-columns {
-    justify-content: center;
 
     @include media-breakpoint-up(md) {
         gap: $grid-gutter-width;
