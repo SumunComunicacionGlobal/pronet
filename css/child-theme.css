@@ -13329,6 +13329,10 @@ h6, .h6 {
   line-height: 1;
 }
 
+.display-1,
+.display-2 {
+  margin-bottom: 2rem;
+}
 .display-1 sup,
 .display-2 sup {
   font-size: 0.2em;

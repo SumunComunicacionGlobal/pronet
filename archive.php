@@ -42,19 +42,17 @@ $post_type = get_post_type();
 				}
 
 				get_template_part( 'global-templates/subcategories' );
+
+				if ( is_active_sidebar( 'description-' . $post_type ) ) {
+					dynamic_sidebar( 'description-' . $post_type );
+				}
 				
 				?>
 
 
 				<?php
 				if ( have_posts() ) {
-					?>
-					<header class="page-header">
-						<?php
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
-					<?php
+
 					// Start the loop.
 					while ( have_posts() ) {
 						the_post();

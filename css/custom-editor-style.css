@@ -19510,6 +19510,11 @@ h6,
   line-height: 1;
 }
 
+.display-1, .is-style-display-1,
+.display-2,
+.is-style-display-2 {
+  margin-bottom: 2rem;
+}
 .display-1 sup, .is-style-display-1 sup,
 .display-2 sup,
 .is-style-display-2 sup {

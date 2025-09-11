@@ -197,21 +197,6 @@ function smn_do_not_include_children_in_product_cat_archive( $query ) {
     }
 }
 
-add_filter( 'get_the_post_type_description', 'smn_get_the_post_type_description', 10, 2 );
-function smn_get_the_post_type_description( $description, $post_type_obj ) {
-
-    $post_type = $post_type_obj->name;
-
-    if ( is_active_sidebar( 'description-' . $post_type ) ) {
-        ob_start();
-        dynamic_sidebar( 'description-' . $post_type );
-        $description = ob_get_clean();
-    }
-
-    return $description;
-
-}
-
 add_filter( 'post_type_link', 'smn_modify_permalink', 10, 4 );
 function smn_modify_permalink( $post_link, $post, $leavename, $sample ) {
     $custom_link = get_field( 'link' );

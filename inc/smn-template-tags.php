@@ -108,8 +108,25 @@ function smn_breadcrumb() {
 
 function smn_get_navbar_class() {
 
-	$navbar_class = 'navbar-dark';
+	if ( smn_has_header_image() ) {
+
+		$navbar_class = 'navbar-dark';
+
+	} else {
+
+		$navbar_class = 'navbar-light';
+
+	}
 
 	return $navbar_class;
 
+}
+
+function smn_has_header_image() {
+
+	if ( is_home() || is_category() || is_tag() ) {
+		return false;
+	}
+
+	return true;
 }

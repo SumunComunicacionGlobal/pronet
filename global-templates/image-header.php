@@ -13,6 +13,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 $image_id = false;
 $header_video_id = false;
 $title = '';
+$title_class = '';
+$description = '';
 
 if ( is_singular() ) {
 	$image_id = get_post_thumbnail_id( get_the_ID() );
@@ -20,6 +22,7 @@ if ( is_singular() ) {
 } elseif ( is_archive() ) {
 	$title = get_the_archive_title();
 	$title_class = 'display-1';
+	$description = get_the_archive_description();
 	if ( is_tax() ) {
 		$image_id = get_term_meta( get_queried_object_id(), 'thumbnail_id', true );
 	} elseif ( is_post_type_archive() ) {
@@ -28,6 +31,7 @@ if ( is_singular() ) {
 		$description = $post_type_object->description;
 		if ( $description ) {
 			$title = $description;
+			$description = '';
 		}
 
 		$header_video_id = get_field( 'header_video_' . $post_type, 'option' );
@@ -41,6 +45,7 @@ if ( is_singular() ) {
 	if ( $page_for_posts ) {
 		$image_id = get_post_thumbnail_id( $page_for_posts );
 		$title = get_the_title( $page_for_posts );
+		$description = get_post_field( 'post_content', $page_for_posts );
 	} else {
 		$image_id = get_theme_mod( 'blog_header_image' );
 		$title = get_bloginfo( 'name' );
@@ -48,36 +53,59 @@ if ( is_singular() ) {
 }
 ?>
 
-<header class="wp-block-cover alignfull is-style-image-header">
+<?php if ( !smn_has_header_image() ) { ?>
 
-	<span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
-
-	<?php if ( $header_video_id ) : ?>
-		<video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="<?php echo wp_get_attachment_url( $header_video_id ); ?>" data-object-fit="cover"></video>
-	<?php elseif ( $image_id ) : 
-		echo wp_get_attachment_image( $image_id, 'large', false, array('class' => 'wp-block-cover__image-background') ); 
-	endif; ?>
-
-	<div class="wp-block-cover__inner-container container">
-
-		<?php if ( is_singular( 'post' ) ) { ?>
-
-			<div class="entry-meta text-white">
-
-				<?php understrap_posted_on(); ?>
-
-			</div><!-- .entry-meta -->
-
-		<?php } ?>
-
+	<header class="container mt-5">
 		<h1 class="entry-title <?php echo $title_class; ?>">
-			<?php if ( !is_post_type_archive() ) echo '↘ '; ?>
-			<?php echo $title; ?>
+			<?php echo '↘ ' . $title; ?>
 		</h1>
+		<?php if ( $description ) { ?>
+			<div class="taxonomy-description">
+				<?php echo wpautop( $description ); ?>
+			</div>
+		<?php } ?>
+	</header>
 
-	</div>
+<?php } else { ?>
 
-</header>
+	<header class="wp-block-cover alignfull is-style-image-header">
+
+		<span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
+
+		<?php if ( $header_video_id ) : ?>
+			<video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="<?php echo wp_get_attachment_url( $header_video_id ); ?>" data-object-fit="cover"></video>
+		<?php elseif ( $image_id ) : 
+			echo wp_get_attachment_image( $image_id, 'large', false, array('class' => 'wp-block-cover__image-background') ); 
+		endif; ?>
+
+		<div class="wp-block-cover__inner-container container">
+
+			<?php if ( is_singular( 'post' ) ) { ?>
+
+				<div class="entry-meta text-white">
+
+					<?php understrap_posted_on(); ?>
+
+				</div><!-- .entry-meta -->
+
+			<?php } ?>
+
+			<h1 class="entry-title <?php echo $title_class; ?>">
+				<?php if ( !is_post_type_archive() ) echo '↘ '; ?>
+				<?php echo $title; ?>
+			</h1>
+
+			<?php if ( $description ) { ?>
+				<div class="taxonomy-description">
+					<?php echo wpautop( $description ); ?>
+				</div>
+			<?php } ?>
+
+		</div>
+
+	</header>
+
+<?php } ?>
 
 <?php smn_breadcrumb(); ?>
 

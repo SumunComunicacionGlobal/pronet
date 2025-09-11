@@ -3,6 +3,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+return false;
+
 if ( is_category() ) {
 	$terms = get_categories( array( 'parent' => get_queried_object_id() ) );
 } else {
@@ -14,7 +16,7 @@ $queried_obj = get_queried_object();
 
 if ( $terms ) { ?>
 
-	<nav class="filter-navbar navbar navbar-expand-lg justify-content-center navbar-light mb-2">
+	<nav class="filter-navbar navbar navbar-expand-lg justify-content-start navbar-light mb-2">
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#filter-navbar-collapse" aria-controls="filter-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-label me-1"><?php echo __( 'Por temas', 'smn' ); ?></span> <span class="navbar-toggler-icon"></span>
@@ -22,11 +24,13 @@ if ( $terms ) { ?>
 
 		<div class="collapse navbar-collapse" id="filter-navbar-collapse">
 
-			<div class="nav navbar-nav mx-auto">
+			<div class="nav navbar-nav">
+
+				<span class="nav-item nav-link ps-0 disabled"><?php echo __( 'Filtrar:', 'smn' ); ?></span>
 
 				<?php if ( $page_for_posts_id ) { ?>
 
-					<a class="nav-item nav-link <?php echo $ver_todo_active_class; ?>" href="<?php echo esc_url( get_the_permalink( $page_for_posts_id ) ); ?>"><?php echo __( 'Todo', 'smn' ); ?></a>
+					<a class="nav-item nav-link <?php echo $ver_todo_active_class; ?>" href="<?php echo esc_url( get_the_permalink( $page_for_posts_id ) ); ?>"><?php echo __( 'Ver todo', 'smn' ); ?></a>
 
 				<?php } ?>
 
