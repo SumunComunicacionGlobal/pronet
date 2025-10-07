@@ -245,8 +245,7 @@ body.understrap-no-sidebar {
         overflow: hidden;
     }
 
-    &.is-style-bordered-content,
-    &.is-style-dark-img-bg {
+    &.is-style-bordered-content{
         gap: $spacer;
         
         .wp-block-media-text__content {
@@ -258,9 +257,20 @@ body.understrap-no-sidebar {
     }
 
     &.is-style-dark-img-bg {
+
+        .wp-block-media-text__content {
+            background-color: var(--wp--preset--color--light);
+            border-radius: $border-radius;
+            padding: $spacer * 2;
+        }
         
         .wp-block-media-text__media {
             background-color: var(--wp--preset--color--primary-80);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $spacer;
         }
     }
 
