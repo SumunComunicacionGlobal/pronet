@@ -20361,6 +20361,11 @@ label + textarea {
   margin-bottom: 1em;
 }
 
+.single-caso-de-exito .wp-block-heading {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
 .widget-area .widget {
   margin-bottom: 2rem;
 }
