@@ -13688,6 +13688,9 @@ body.understrap-no-sidebar .alignwide {
   border-radius: 1rem;
   padding: 2rem;
 }
+.wp-block-media-text.is-style-dark-img-bg {
+  gap: 1rem;
+}
 .wp-block-media-text.is-style-dark-img-bg .wp-block-media-text__content {
   background-color: var(--wp--preset--color--light);
   border-radius: 1rem;
