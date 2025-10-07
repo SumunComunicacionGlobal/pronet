@@ -245,7 +245,8 @@ body.understrap-no-sidebar {
         overflow: hidden;
     }
 
-    &.is-style-bordered-content {
+    &.is-style-bordered-content,
+    &.is-style-dark-img-bg {
         gap: $spacer;
         
         .wp-block-media-text__content {
@@ -257,7 +258,6 @@ body.understrap-no-sidebar {
     }
 
     &.is-style-dark-img-bg {
-        background-color: var(--wp--preset--color--light);
         
         .wp-block-media-text__media {
             background-color: var(--wp--preset--color--primary-80);

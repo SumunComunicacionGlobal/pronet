@@ -13680,16 +13680,13 @@ body.understrap-no-sidebar .alignwide {
   border-radius: 1rem;
   overflow: hidden;
 }
-.wp-block-media-text.is-style-bordered-content {
+.wp-block-media-text.is-style-bordered-content, .wp-block-media-text.is-style-dark-img-bg {
   gap: 1rem;
 }
-.wp-block-media-text.is-style-bordered-content .wp-block-media-text__content {
+.wp-block-media-text.is-style-bordered-content .wp-block-media-text__content, .wp-block-media-text.is-style-dark-img-bg .wp-block-media-text__content {
   border: 1px solid #1a1a1a;
   border-radius: 1rem;
   padding: 2rem;
-}
-.wp-block-media-text.is-style-dark-img-bg {
-  background-color: var(--wp--preset--color--light);
 }
 .wp-block-media-text.is-style-dark-img-bg .wp-block-media-text__media {
   background-color: var(--wp--preset--color--primary-80);
