@@ -14176,7 +14176,7 @@ label + textarea {
   margin-bottom: 1em;
 }
 
-.single-caso-de-exito .wp-block-heading {
+body:not(.page) .wp-block-heading {
   margin-bottom: 0.5em;
   margin-top: 1em;
 }
