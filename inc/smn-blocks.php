@@ -148,6 +148,15 @@ if ( function_exists( 'register_block_style' ) ) {
         )
     );
 
+    register_block_style(
+        'core/media-text',
+        array(
+            'name'         => 'dark-img-bg',
+            'label'        => __( 'Fondo de imagen oscuro', 'smn-admin' ),
+            'is_default'   => false,
+        )
+    );
+
 
     $carousel_block_types = array(
         'core/group',
