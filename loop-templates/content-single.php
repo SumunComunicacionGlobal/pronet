@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 		if ( 'caso-de-exito' == get_post_type() ) {
 			$excerpt = $post->post_excerpt;
 			if ( $excerpt ) {
-				echo '<div class="has-medium-font-size">';
+				echo '<div class="has-medium-font-size mb-4">';
 					echo wpautop( $excerpt );
 				echo '</div>';
 			}

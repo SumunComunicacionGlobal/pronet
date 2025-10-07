@@ -51,7 +51,7 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
             $r .= '</div>';
             $r .= '<div class="excerpt-link flex-shrink-0">';
             $r .= '<a class="btn btn-outline-primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
-                $r .= __( 'Conoce iECS', 'smn' ) . ' ↘';
+                $r .= __( 'Ver más', 'smn' ) . ' ↘';
             $r .= '</a>';
             $r .= '</div>';
         $r .= '</div>';
