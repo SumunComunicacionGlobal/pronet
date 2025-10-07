@@ -14,6 +14,16 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 
 		<?php
+
+		if ( 'caso-de-exito' == get_post_type() ) {
+			$excerpt = $post->post_excerpt;
+			if ( $excerpt ) {
+				echo '<div class="has-medium-font-size">';
+					echo wpautop( $excerpt );
+				echo '</div>';
+			}
+		}
+
 		the_content();
 		understrap_link_pages();
 		?>
