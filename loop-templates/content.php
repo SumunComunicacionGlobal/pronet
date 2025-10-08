@@ -46,7 +46,7 @@ if ( 'caso-de-exito' == $post_type ) {
 					<?php }
 				} ?>
 
-				<h2 class="entry-title h1 mb-0">↘ <?php the_title(); ?></h2>
+				<h2 class="entry-title h3 mb-0">↘ <?php the_title(); ?></h2>
 
 			</header><!-- .entry-header -->
 
