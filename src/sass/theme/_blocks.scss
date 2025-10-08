@@ -464,6 +464,9 @@ body.understrap-no-sidebar {
 
     li {
         margin-bottom: .25em;
+    }
+
+    > li {
         &::marker {
             content: "↘ ";
             color: var(--wp--preset--color--primary);

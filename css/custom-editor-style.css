@@ -20038,7 +20038,7 @@ body.understrap-no-sidebar .alignwide {
 .wp-block-list li {
   margin-bottom: 0.25em;
 }
-.wp-block-list li::marker {
+.wp-block-list > li::marker {
   content: "↘ ";
   color: var(--wp--preset--color--primary);
   font-size: 1.2em;
