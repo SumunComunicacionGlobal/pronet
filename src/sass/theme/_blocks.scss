@@ -91,6 +91,16 @@ body.understrap-no-sidebar {
 
 }
 
+:where(.wp-block-cover-image:not(.has-text-color)), 
+:where(.wp-block-cover:not(.has-text-color)) {
+
+    .wp-block-button__link img {
+        filter: brightness(0) invert(1);
+        transform: translateX(-.25em);
+    }
+
+}
+
 .wp-block-group {
 
     &.is-style-traslucido {

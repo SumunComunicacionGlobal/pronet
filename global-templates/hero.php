@@ -21,7 +21,7 @@ $q = new WP_Query($args);
 
 if ( $q->have_posts() ) { ?>
 
-	<div class="slick-slider-default">
+	<div class="slick-slider-default slider-home">
 
 		<?php while ( $q->have_posts() ) { $q->the_post();
 
