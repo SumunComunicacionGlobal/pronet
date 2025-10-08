@@ -35,31 +35,31 @@ function smn_setup() {
 
 }
 
-// function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+function understrap_all_excerpts_get_more_link( $post_excerpt ) {
     
-// 	if ( ! is_admin() ) {
-//         global $post;
-//         if ( !$post->post_excerpt ) {
-//             $post_excerpt = $post_excerpt . ' [...]';
-//         }
+	if ( ! is_admin() ) {
+        global $post;
+        if ( !$post->post_excerpt ) {
+            $post_excerpt = $post_excerpt . ' [...]';
+        }
 
-//         if ( is_search() ) return $post_excerpt;
+        if ( is_search() ) return $post_excerpt;
 
-//         $r = '<div class="excerpt-row d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-end">';
-//             $r .= '<div class="excerpt-text flex-grow-1">';
-//             $r .= $post_excerpt;
-//             $r .= '</div>';
-//             $r .= '<div class="excerpt-link flex-shrink-0">';
-//             $r .= '<a class="btn btn-outline-primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
-//                 $r .= __( 'Ver más', 'smn' ) . ' ↘';
-//             $r .= '</a>';
-//             $r .= '</div>';
-//         $r .= '</div>';
+        $r = '<div class="excerpt-row d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-end">';
+            $r .= '<div class="excerpt-text flex-grow-1">';
+            $r .= $post_excerpt;
+            $r .= '</div>';
+            $r .= '<div class="excerpt-link flex-shrink-0">';
+            $r .= '<a class="btn btn-outline-primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
+                $r .= __( 'Ver más', 'smn' ) . ' ↘';
+            $r .= '</a>';
+            $r .= '</div>';
+        $r .= '</div>';
 
-//         return $r;
-//     }
+        return $r;
+    }
 
-// }
+}
 
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 function custom_excerpt_length( $length ) {
