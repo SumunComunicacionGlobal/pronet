@@ -94,3 +94,8 @@ body {
 .wp-block-button.backdrop-filter-blur > .wp-block-button__link {
     backdrop-filter: blur(10px);
 }
+
+.aspect-ratio-3-4 {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}

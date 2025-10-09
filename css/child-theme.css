@@ -12642,6 +12642,12 @@ body.privacy-policy #content, body.cmplz-document #content {
   backdrop-filter: blur(10px);
 }
 
+.aspect-ratio-3-4 {
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #001F3F;
