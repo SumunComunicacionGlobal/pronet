@@ -21,7 +21,7 @@ $q = new WP_Query($args);
 
 if ( $q->have_posts() ) { ?>
 
-	<div class="bg-light">
+	<div class="bg-dark">
 
 		<div class="slick-slider-default slider-home">
 
