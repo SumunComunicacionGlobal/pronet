@@ -20227,7 +20227,7 @@ label + textarea {
 #main-nav #main-menu .nav-link {
   text-transform: uppercase;
 }
-#main-nav #main-menu > li:last-child > .nav-link::after {
+#main-nav #main-menu > li.menu-item-has-children > .nav-link::after {
   content: "›";
   position: relative;
   display: inline-block;
@@ -20244,10 +20244,10 @@ label + textarea {
 
 @media (min-width: 992px) {
   #main-nav #main-menu {
-    gap: 1rem;
+    gap: 0.5rem;
   }
   #main-nav #main-menu .nav-link {
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 50rem;
     font-size: 0.875rem;
     border: 1px solid;
