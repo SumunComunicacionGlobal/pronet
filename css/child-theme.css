@@ -14341,7 +14341,6 @@ body:not(.page) .wp-block-heading {
 }
 
 .slider-home {
-  background-color: #E8E8E8;
   transition: all 0.2s ease-in-out;
 }
 .slider-home:not(.slick-initialized) {

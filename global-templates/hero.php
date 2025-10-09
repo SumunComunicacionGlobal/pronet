@@ -21,13 +21,17 @@ $q = new WP_Query($args);
 
 if ( $q->have_posts() ) { ?>
 
-	<div class="slick-slider-default slider-home">
+	<div class="bg-light">
 
-		<?php while ( $q->have_posts() ) { $q->the_post();
+		<div class="slick-slider-default slider-home">
 
-			get_template_part( 'loop-templates/content', $post_type );
+			<?php while ( $q->have_posts() ) { $q->the_post();
 
-		} ?>
+				get_template_part( 'loop-templates/content', $post_type );
+
+			} ?>
+
+		</div>
 
 	</div>
 
