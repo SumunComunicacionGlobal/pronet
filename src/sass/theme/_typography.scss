@@ -141,6 +141,10 @@ blockquote,
     font-size: $font-size-base * 1.375;
 }
 
+.wp-block-group .wp-block-post-title a {
+    @extend .stretched-link;
+}
+
 @include media-breakpoint-up(lg) {
 
     .display-1 {

@@ -8006,7 +8006,7 @@ textarea.form-control-lg {
   border: 0 !important;
 }
 
-.stretched-link::after {
+.stretched-link::after, .wp-block-group .wp-block-post-title a::after {
   position: absolute;
   top: 0;
   right: 0;
