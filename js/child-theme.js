@@ -14982,7 +14982,8 @@
 	  speed: 300,
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
-	  autoplay: false,
+	  autoplay: true,
+	  autoplaySpeed: 7000,
 	  adaptiveHeight: true,
 	  prevArrow: prevArrow,
 	  nextArrow: nextArrow
