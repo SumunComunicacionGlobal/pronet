@@ -14340,6 +14340,15 @@ body:not(.page) .wp-block-heading {
   padding: 4rem 0;
 }
 
+.slider-home:not(.slick-initialized) {
+  overflow: hidden;
+  height: 90vh;
+}
+@media (min-width: 992px) {
+  .slider-home:not(.slick-initialized) {
+    height: 640px;
+  }
+}
 .slider-home,
 .slider-home .slick-slide > .wp-block-cover {
   min-height: 90vh;

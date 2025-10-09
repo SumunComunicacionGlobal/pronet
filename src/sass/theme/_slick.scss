@@ -132,6 +132,15 @@ $slick-font-size: 32px;
 
 .slider-home {
 
+	&:not(.slick-initialized) {
+		overflow: hidden;
+		height: 90vh;
+
+		@include media-breakpoint-up(lg) {
+			height: 640px;
+		}
+	}
+
 	&,
 	.slick-slide > .wp-block-cover {
 			min-height: 90vh;
