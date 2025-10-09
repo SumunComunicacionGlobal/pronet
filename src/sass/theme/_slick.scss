@@ -131,14 +131,21 @@ $slick-font-size: 32px;
 }
 
 .slider-home {
+	background-color: $light;
+	transition: $transition-base;
 
 	&:not(.slick-initialized) {
 		overflow: hidden;
 		height: 90vh;
+		opacity: 0;
 
 		@include media-breakpoint-up(lg) {
 			height: 640px;
 		}
+	}
+
+	&.slick-initialized {
+		opacity: 1;
 	}
 
 	&,

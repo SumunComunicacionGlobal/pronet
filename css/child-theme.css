@@ -14340,14 +14340,22 @@ body:not(.page) .wp-block-heading {
   padding: 4rem 0;
 }
 
+.slider-home {
+  background-color: #E8E8E8;
+  transition: all 0.2s ease-in-out;
+}
 .slider-home:not(.slick-initialized) {
   overflow: hidden;
   height: 90vh;
+  opacity: 0;
 }
 @media (min-width: 992px) {
   .slider-home:not(.slick-initialized) {
     height: 640px;
   }
+}
+.slider-home.slick-initialized {
+  opacity: 1;
 }
 .slider-home,
 .slider-home .slick-slide > .wp-block-cover {
