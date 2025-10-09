@@ -141,9 +141,9 @@ $slick-font-size: 32px;
 			}
 	}
 
-	.slick-slide {
+	// .slick-slide {
 		
-		> .wp-block-cover {
+		.wp-block-cover {
 			padding-top: 140px;
 
 			> .wp-block-cover__inner-container {
@@ -169,7 +169,7 @@ $slick-font-size: 32px;
 		.wp-block-button__link img {
 			display: inline-block;
 		}
-	}
+	// }
 
 	.slick-prev-custom,
 	.slick-next-custom {
