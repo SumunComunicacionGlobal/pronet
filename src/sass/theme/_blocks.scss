@@ -474,6 +474,12 @@ body.understrap-no-sidebar {
         }
     }
 
+    ul li {
+        &::marker {
+            content: "• ";
+        }
+    }
+
     &.is-style-list-grid {
         list-style: none;
         padding-left: 0;

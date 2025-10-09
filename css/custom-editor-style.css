@@ -20043,6 +20043,9 @@ body.understrap-no-sidebar .alignwide {
   color: var(--wp--preset--color--primary);
   font-size: 1.2em;
 }
+.wp-block-list ul li::marker {
+  content: "• ";
+}
 .wp-block-list.is-style-list-grid {
   list-style: none;
   padding-left: 0;
