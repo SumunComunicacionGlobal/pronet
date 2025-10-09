@@ -20525,9 +20525,18 @@ body:not(.page) .wp-block-heading {
   padding: 4rem 0;
 }
 
+.slider-home,
+.slider-home .slick-slide > .wp-block-cover {
+  min-height: 90vh;
+}
+@media (min-width: 992px) {
+  .slider-home,
+  .slider-home .slick-slide > .wp-block-cover {
+    min-height: 640px;
+  }
+}
 .slider-home .slick-slide > .wp-block-cover {
   padding-top: 140px;
-  min-height: 90vh;
 }
 @media (max-width: 782.98px) {
   .slider-home .slick-slide > .wp-block-cover .wp-block-spacer {
@@ -20537,7 +20546,6 @@ body:not(.page) .wp-block-heading {
 @media (min-width: 992px) {
   .slider-home .slick-slide > .wp-block-cover {
     padding-top: 180px;
-    min-height: 640px;
   }
   .slider-home .slick-slide > .wp-block-cover .has-large-font-size {
     font-size: 3rem !important;

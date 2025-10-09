@@ -132,11 +132,19 @@ $slick-font-size: 32px;
 
 .slider-home {
 
+	&,
+	.slick-slide > .wp-block-cover {
+			min-height: 90vh;
+
+			@include media-breakpoint-up(lg) {
+				min-height: 640px;
+			}
+	}
+
 	.slick-slide {
 		
 		> .wp-block-cover {
 			padding-top: 140px;
-			min-height: 90vh;
 
 			> .wp-block-cover__inner-container {
 				@extend .container;
@@ -150,7 +158,6 @@ $slick-font-size: 32px;
 
 			@include media-breakpoint-up(lg) {
 				padding-top: 180px;
-				min-height: 640px;
 
 				.has-large-font-size {
 					font-size: 3rem !important;
