@@ -20512,9 +20512,9 @@ body:not(.page) .wp-block-heading {
 }
 .slick-padded.wp-block-gallery figure > img,
 .is-style-slick-carousel.wp-block-gallery figure > img {
-  height: 330px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  height: 330px !important;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
 }
 
 .slick-right-padded .slick-list {
