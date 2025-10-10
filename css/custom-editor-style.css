@@ -20510,7 +20510,9 @@ body:not(.page) .wp-block-heading {
 .is-style-slick-carousel .slick-slide {
   margin: 0 1.5rem !important;
 }
+.slick-padded.wp-block-gallery figure,
 .slick-padded.wp-block-gallery figure > img,
+.is-style-slick-carousel.wp-block-gallery figure,
 .is-style-slick-carousel.wp-block-gallery figure > img {
   height: 330px !important;
   -o-object-fit: cover !important;

@@ -104,6 +104,7 @@ $slick-font-size: 32px;
 
 	&.wp-block-gallery {
 
+		figure,
 		figure > img {
 			height: 330px !important;
 			object-fit: cover !important;
