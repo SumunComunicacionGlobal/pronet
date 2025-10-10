@@ -95,11 +95,19 @@ $slick-font-size: 32px;
 .is-style-slick-carousel {
 
 	.slick-list {
-		margin: 0 -$grid-gutter-width/2;
+		margin: 0 -$grid-gutter-width/2 !important;
 	}
 
 	.slick-slide {
-		margin: 0 $grid-gutter-width/2;
+		margin: 0 $grid-gutter-width/2 !important;
+	}
+
+	&.wp-block-gallery {
+
+		figure > img {
+			height: 330px;
+			object-fit: cover;
+		}
 	}
 
 }

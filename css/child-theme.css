@@ -14319,11 +14319,17 @@ body:not(.page) .wp-block-heading {
 
 .slick-padded .slick-list,
 .is-style-slick-carousel .slick-list {
-  margin: -1.5rem;
+  margin: -1.5rem !important;
 }
 .slick-padded .slick-slide,
 .is-style-slick-carousel .slick-slide {
-  margin: 0 1.5rem;
+  margin: 0 1.5rem !important;
+}
+.slick-padded.wp-block-gallery figure > img,
+.is-style-slick-carousel.wp-block-gallery figure > img {
+  height: 330px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-right-padded .slick-list {
