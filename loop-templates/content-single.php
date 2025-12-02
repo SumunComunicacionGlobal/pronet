@@ -16,6 +16,9 @@ defined( 'ABSPATH' ) || exit;
 		<?php
 
 		if ( 'caso-de-exito' == get_post_type() ) {
+
+			echo '<img src="' . esc_url( get_stylesheet_directory_uri() . '/img/logo-grupo-pronet.svg' ) . '" alt="'. __( 'Logo Grupo Pronet', 'smn' ) .'" class="mb-2" width="256" height="63" />';
+
 			$excerpt = $post->post_excerpt;
 			if ( $excerpt ) {
 				echo '<div class="has-large-font-size mb-4">';
@@ -46,6 +49,12 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+
+		<?php if ( is_singular( 'caso-de-exito' ) ) :
+
+			echo '<img src="' . esc_url( get_stylesheet_directory_uri() . '/img/favicon-pronet.png' ) . '" alt="'. __( 'Logo Grupo Pronet', 'smn' ) .'" class="d-block ms-auto" width="128" height="128" />';
+
+		endif; ?>
 
 		<?php understrap_entry_footer(); ?>
 

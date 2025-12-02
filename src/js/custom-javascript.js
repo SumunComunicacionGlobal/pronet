@@ -218,6 +218,10 @@ jQuery('.wp-block-buttons.is-style-carousel').slick({
   ]
 });
 
+jQuery('.hero-tab .nav-link').on('click', function() {
+  var slideIndex = jQuery(this).data('slide');
+  jQuery('.slider-home').slick('slickGoTo', slideIndex);
+});
 
 
 // Animación hero

@@ -90,6 +90,8 @@ if ( is_singular() ) {
 
 			<?php } ?>
 
+			<?php if ( is_post_type_archive() ) { echo smn_get_breadcrumb(); } ?>
+
 			<h1 class="entry-title <?php echo $title_class; ?>">
 				<?php if ( !is_post_type_archive() ) echo '↘ '; ?>
 				<?php echo $title; ?>
@@ -107,5 +109,5 @@ if ( is_singular() ) {
 
 <?php } ?>
 
-<?php smn_breadcrumb(); ?>
+<?php if ( !is_post_type_archive() ) { smn_breadcrumb(); } ?>
 

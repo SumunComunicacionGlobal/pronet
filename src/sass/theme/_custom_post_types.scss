@@ -55,5 +55,11 @@ body:not(.page) {
         margin-bottom: .5em;
         margin-top: 1em;
     }
-    
+
+}
+
+.type-slide .edit-link {
+    position: absolute;
+    left: $spacer;
+    bottom: $spacer;
 }

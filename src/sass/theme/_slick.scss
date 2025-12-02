@@ -95,7 +95,8 @@ $slick-font-size: 32px;
 .is-style-slick-carousel {
 
 	.slick-list {
-		margin: 0 -$grid-gutter-width/2 !important;
+		margin-left: -$grid-gutter-width/2 !important;
+		margin-right: -$grid-gutter-width/2 !important;
 	}
 
 	.slick-slide {
@@ -109,6 +110,22 @@ $slick-font-size: 32px;
 			height: 330px !important;
 			object-fit: cover !important;
 		}
+	}
+
+	margin-bottom: $spacer * 4;
+
+	.slick-prev,
+	.slick-next {
+		transform: none;
+		left: unset;
+		right: 0;
+		top: unset;
+		bottom: -$slick-font-size*1.5;
+
+		&.slick-prev {
+			right: $slick-font-size*1.2;
+		}
+
 	}
 
 }
@@ -169,6 +186,7 @@ $slick-font-size: 32px;
 		
 		.wp-block-cover {
 			padding-top: 140px;
+			padding-bottom: 100px;
 
 			> .wp-block-cover__inner-container {
 				@extend .container;
@@ -206,4 +224,27 @@ $slick-font-size: 32px;
 
 	}
 
+}
+
+.hero-tabs-wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+
+	.nav-link {
+		background-color: rgba($white, .1);
+		margin: 0 $border-width;
+		border-top: 2px solid $white;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-bold;
+
+		&:hover {
+			background-color: rgba($black, .3);
+			color: $white;
+		}
+	}
 }

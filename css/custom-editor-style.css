@@ -136,7 +136,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 small, .small {
@@ -2555,7 +2555,7 @@ progress {
 }
 
 .fw-bolder {
-  font-weight: bolder !important;
+  font-weight: 600 !important;
 }
 
 .lh-1 {
@@ -6121,7 +6121,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 992px) {
@@ -6129,7 +6129,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
@@ -6415,7 +6415,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 small, .small {
@@ -6860,12 +6860,12 @@ progress {
 }
 @media (min-width: 783px) {
   .container-md, .container-sm, .container, .slider-home .wp-block-cover > .wp-block-cover__inner-container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container, .slider-home .wp-block-cover > .wp-block-cover__inner-container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
@@ -15320,7 +15320,7 @@ textarea.form-control-lg {
 }
 
 .fw-bolder {
-  font-weight: bolder !important;
+  font-weight: 600 !important;
 }
 
 .lh-1 {
@@ -18785,6 +18785,12 @@ body.privacy-policy #content, body.cmplz-document #content {
   max-width: 50rem;
   margin-bottom: 6rem;
 }
+body.privacy-policy .wp-block-heading, body.cmplz-document .wp-block-heading {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
 .stretch-linked-block {
   position: relative !important;
@@ -19377,7 +19383,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 992px) {
@@ -19385,7 +19391,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
@@ -19471,6 +19477,10 @@ p.has-text-align-center,
 .wp-block-heading.has-text-align-center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.wp-block-heading {
+  margin-bottom: 2em;
 }
 
 h1:last-child, .is-style-h1:last-child, .h1:last-child,
@@ -19665,12 +19675,12 @@ body.understrap-no-sidebar .alignwide {
 }
 @media (min-width: 783px) {
   .wp-block-group.alignfull > .wp-block-group__inner-container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 992px) {
   .wp-block-group.alignfull > .wp-block-group__inner-container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
@@ -19708,13 +19718,13 @@ body.understrap-no-sidebar .alignwide {
 @media (min-width: 783px) {
   #wrapper-prefooter .alignfull > .wp-block-cover__inner-container,
   #wrapper-prefooter .alignfull > .wp-block-group__inner-container {
-    max-width: 720px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 992px) {
   #wrapper-prefooter .alignfull > .wp-block-cover__inner-container,
   #wrapper-prefooter .alignfull > .wp-block-group__inner-container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
@@ -20397,6 +20407,12 @@ body:not(.page) .wp-block-heading {
   margin-top: 1em;
 }
 
+.type-slide .edit-link {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+}
+
 .widget-area .widget {
   margin-bottom: 2rem;
 }
@@ -20502,9 +20518,14 @@ body:not(.page) .wp-block-heading {
   opacity: 0.5;
 }
 
+.slick-padded,
+.is-style-slick-carousel {
+  margin-bottom: 4rem;
+}
 .slick-padded .slick-list,
 .is-style-slick-carousel .slick-list {
-  margin: -1.5rem !important;
+  margin-left: -1.5rem !important;
+  margin-right: -1.5rem !important;
 }
 .slick-padded .slick-slide,
 .is-style-slick-carousel .slick-slide {
@@ -20517,6 +20538,22 @@ body:not(.page) .wp-block-heading {
   height: 330px !important;
   -o-object-fit: cover !important;
   object-fit: cover !important;
+}
+.slick-padded .slick-prev,
+.slick-padded .slick-next,
+.is-style-slick-carousel .slick-prev,
+.is-style-slick-carousel .slick-next {
+  transform: none;
+  left: unset;
+  right: 0;
+  top: unset;
+  bottom: -48px;
+}
+.slick-padded .slick-prev.slick-prev,
+.slick-padded .slick-next.slick-prev,
+.is-style-slick-carousel .slick-prev.slick-prev,
+.is-style-slick-carousel .slick-next.slick-prev {
+  right: 38.4px;
 }
 
 .slick-right-padded .slick-list {
@@ -20567,6 +20604,7 @@ body:not(.page) .wp-block-heading {
 }
 .slider-home .wp-block-cover {
   padding-top: 140px;
+  padding-bottom: 100px;
 }
 @media (max-width: 782.98px) {
   .slider-home .wp-block-cover .wp-block-spacer {
@@ -20592,6 +20630,27 @@ body:not(.page) .wp-block-heading {
 .slider-home .slick-prev-custom svg,
 .slider-home .slick-next-custom svg {
   filter: brightness(0) invert(1);
+}
+
+.hero-tabs-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+}
+.hero-tabs-wrapper .nav-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 1px;
+  border-top: 2px solid #fff;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.hero-tabs-wrapper .nav-link:hover {
+  background-color: rgba(26, 26, 26, 0.3);
+  color: #fff;
 }
 
 #wrapper-prefooter {

@@ -15113,6 +15113,11 @@
 	  ]
 	});
 
+	jQuery('.hero-tab .nav-link').on('click', function () {
+	  var slideIndex = jQuery(this).data('slide');
+	  jQuery('.slider-home').slick('slickGoTo', slideIndex);
+	});
+
 	// Animación hero
 	jQuery('#hero .wp-block-cover__inner-container, .caso-de-exito-compacto-text').each(function (index) {
 	  gsapWithCSS.from(this, {
